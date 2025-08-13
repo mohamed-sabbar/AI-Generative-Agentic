@@ -3,5 +3,5 @@ uvicorn
 langchain
 pymupdf
 faiss-cpu
-openai
+sentence-transformers
 python-dotenv

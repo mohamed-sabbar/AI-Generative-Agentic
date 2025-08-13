@@ -1,0 +1,2132 @@
+[
+  {
+    "prompt": "Diagramme d'activitÃ©s syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n\n(*) --> \"First Action\"\n\"First Action\" --> (*)\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-legacy"
+  },
+  {
+    "prompt": "Diagramme d'activitÃ©s syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n\n(*) --> \"First Action\"\n-->[You can put also labels] \"Second Action\"\n--> (*)\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-legacy"
+  },
+  {
+    "prompt": "Diagramme d'activitÃ©s syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n\n(*) -up-> \"First Action\"\n-right-> \"Second Action\"\n--> \"Third Action\"\n-left-> (*)\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-legacy"
+  },
+  {
+    "prompt": "Diagramme d'activitÃ©s syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n(*) --> \"Initialization\"\n\nif \"Some Test\" then\n  -->[true] \"Some Action\"\n  --> \"Another Action\"\n  -right-> (*)\nelse\n  ->[false] \"Something else\"\n  -->[Ending process] (*)\nendif\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-legacy"
+  },
+  {
+    "prompt": "Diagramme d'activitÃ©s syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n(*)  --> \"check input\"\nIf \"input is verbose\" then\n--> [Yes] \"turn on verbosity\"\n--> \"run command\"\nelse\n--> \"run command\"\nEndif\n-->(*)\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-legacy"
+  },
+  {
+    "prompt": "Diagramme d'activitÃ©s syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n\n(*) --> if \"Some Test\" then\n\n  -->[true] \"activity 1\"\n\n  if \"\" then\n    -> \"activity 3\" as a3\n  else\n    if \"Other test\" then\n      -left-> \"activity 5\"\n    else\n      --> \"activity 6\"\n    endif\n  endif\n\nelse\n\n  ->[false] \"activity 2\"\n\nendif\n\na3 --> if \"last test\" then\n  --> \"activity 7\"\nelse\n  -> \"activity 8\"\nendif\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-legacy"
+  },
+  {
+    "prompt": "Diagramme d'activitÃ©s syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n\n(*) --> ===B1===\n--> \"Parallel Activity 1\"\n--> ===B2===\n\n===B1=== --> \"Parallel Activity 2\"\n--> ===B2===\n\n--> (*)\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-legacy"
+  },
+  {
+    "prompt": "Diagramme d'activitÃ©s syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n(*) -left-> \"this <size:20>activity</size>\nis <b>very</b> <color:red>long2</color>\nand defined on several lines\nthat contains many <i>text</i>\" as A1\n\n-up-> \"Another activity\\n on several lines\"\n\nA1 --> \"Short activity <img:sourceforge.jpg>\"\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-legacy"
+  },
+  {
+    "prompt": "Diagramme d'activitÃ©s syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n\n(*) --> \"Some Activity\"\nnote right: This activity has to be defined\n\"Some Activity\" --> (*)\nnote left\n This note is on\n several lines\nend note\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-legacy"
+  },
+  {
+    "prompt": "Diagramme d'activitÃ©s syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n\npartition Conductor {\n  (*) --> \"Climbs on Platform\"\n  --> === S1 ===\n  --> Bows\n}\n\npartition Audience #LightSkyBlue {\n  === S1 === --> Applauds\n}\n\npartition Conductor {\n  Bows --> === S2 ===\n  --> WavesArmes\n  Applauds --> === S2 ===\n}\n\npartition Orchestra #CCCCEE {\n  WavesArmes --> Introduction\n  --> \"Play music\"\n}\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-legacy"
+  },
+  {
+    "prompt": "Diagramme d'activitÃ©s syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n\nskinparam backgroundColor #AAFFFF\nskinparam activity {\n  StartColor red\n  BarColor SaddleBrown\n  EndColor Silver\n  BackgroundColor Peru\n  BackgroundColor<< Begin >> Olive\n  BorderColor Peru\n  FontName Impact\n}\n\n(*) --> \"Climbs on Platform\" << Begin >>\n--> === S1 ===\n--> Bows\n--> === S2 ===\n--> WavesArmes\n--> (*)\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-legacy"
+  },
+  {
+    "prompt": "Diagramme d'activitÃ©s syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n'Default is skinparam activityShape roundBox\nskinparam activityShape octagon\n\n(*) --> \"First Activity\"\n\"First Activity\" --> (*)\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-legacy"
+  },
+  {
+    "prompt": "Diagramme d'activitÃ©s syntaxe et caractÃ©ristiques",
+    "code": "@startuml\ntitle Servlet Container\n\n(*) --> \"ClickServlet.handleRequest()\"\n--> \"new Page\"\n\nif \"Page.onSecurityCheck\" then\n  ->[true] \"Page.onInit()\"\n\n  if \"isForward?\" then\n   ->[no] \"Process controls\"\n\n   if \"continue processing?\" then\n     -->[yes] ===RENDERING===\n   else\n     -->[no] ===REDIRECT_CHECK===\n   endif\n\n  else\n   -->[yes] ===RENDERING===\n  endif\n\n  if \"is Post?\" then\n    -->[yes] \"Page.onPost()\"\n    --> \"Page.onRender()\" as render\n    --> ===REDIRECT_CHECK===\n  else\n    -->[no] \"Page.onGet()\"\n    --> render\n  endif\n\nelse\n  -->[false] ===REDIRECT_CHECK===\nendif\n\nif \"Do redirect?\" then\n ->[yes] \"redirect request\"\n --> ==BEFORE_DESTROY===\nelse\n if \"Do Forward?\" then\n  -left->[yes] \"Forward request\"\n  --> ==BEFORE_DESTROY===\n else\n  -right->[no] \"Render page template\"\n  --> ==BEFORE_DESTROY===\n endif\nendif\n\n--> \"Page.onDestroy()\"\n-->(*)\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-legacy"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n:Hello world;\n:This is defined on\nseveral **lines**;\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nstart\n:Hello world;\n:This is on defined on\nseveral **lines**;\nstop\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nstart\n:Hello world;\n:This is on defined on\nseveral **lines**;\nend\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n\nstart\n\nif (Graphviz installed?) then (yes)\n  :process all\\ndiagrams;\nelse (no)\n  :process only\n  __sequence__ and __activity__ diagrams;\nendif\n\nstop\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nif (color?) is (<color:red>red) then\n:print red;\nelse \n:print not red;\nendif\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nif (counter?) equals (5) then\n:print 5;\nelse \n:print not 5;\nendif\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nstart\nif (condition A) then (yes)\n  :Text 1;\nelseif (condition B) then (yes)\n  :Text 2;\n  stop\n(no) elseif (condition C) then (yes)\n  :Text 3;\n(no) elseif (condition D) then (yes)\n  :Text 4;\nelse (nothing)\n  :Text else;\nendif\nstop\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n!pragma useVerticalIf on\nstart\nif (condition A) then (yes)\n  :Text 1;\nelseif (condition B) then (yes)\n  :Text 2;\n  stop\nelseif (condition C) then (yes)\n  :Text 3;\nelseif (condition D) then (yes)\n  :Text 4;\nelse (nothing)\n  :Text else;\nendif\nstop\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nstart\nswitch (test?)\ncase ( condition A )\n  :Text 1;\ncase ( condition B ) \n  :Text 2;\ncase ( condition C )\n  :Text 3;\ncase ( condition D )\n  :Text 4;\ncase ( condition E )\n  :Text 5;\nendswitch\nstop\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nif (condition?) then\n  :error;\n  stop\nendif\n#palegreen:action;\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nif (condition?) then\n  #pink:error;\n  kill\nendif\n#palegreen:action;\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nif (condition?) then\n  #pink:error;\n  detach\nendif\n#palegreen:action;\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n\nstart\n\nrepeat\n  :read data;\n  :generate diagrams;\nrepeat while (more data?)\n\nstop\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n\nstart\n\nrepeat :foo as starting label;\n  :read data;\n  :generate diagrams;\nbackward:This is backward;\nrepeat while (more data?)\n\nstop\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nstart\nrepeat\n  :Test something;\n    if (Something went wrong?) then (no)\n      #palegreen:OK;\n      break\n    endif\n    ->NOK;\n    :Alert \"Error with long text\";\nrepeat while (Something went wrong with long text?) is (yes) not (no)\n->//merged step//;\n:Alert \"Success\";\nstop\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\ntitle Point two queries to same activity\\nwith `goto`\nstart\nif (Test Question?) then (yes)\n'space label only for alignment\nlabel sp_lab0\nlabel sp_lab1\n'real label\nlabel lab\n:shared;\nelse (no)\nif (Second Test Question?) then (yes)\nlabel sp_lab2\ngoto sp_lab1\nelse\n:nonShared;\nendif\nendif\n:merge;\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n\nstart\n\nwhile (data available?)\n  :read data;\n  :generate diagrams;\nendwhile\n\nstop\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nwhile (check filesize ?) is (not empty)\n  :read file;\nendwhile (empty)\n:close file;\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nstart\nfork\n  :action 1;\nfork again\n  :action 2;\nend fork\nstop\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nstart\nfork\n  :action 1;\nfork again\n  :action 2;\nend merge\nstop\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nstart\nfork\n  :action 1;\nfork again\n  :action 2;\nfork again\n  :action 3;\nfork again\n  :action 4;\nend merge\nstop\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nstart\nfork\n  :action 1;\nfork again\n  :action 2;\n  end\nend merge\nstop\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nstart\nfork\n  :action A;\nfork again\n  :action B;\nend fork {or}\nstop\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nstart\nfork\n  :action A;\nfork again\n  :action B;\nend fork {and}\nstop\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n\nstart\n\nif (multiprocessor?) then (yes)\n  fork\n    :Treatment 1;\n  fork again\n    :Treatment 2;\n  end fork\nelse (monoproc)\n  :Treatment 1;\n  :Treatment 2;\nendif\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nstart\nsplit\n   :A;\nsplit again\n   :B;\nsplit again\n   :C;\nsplit again\n   :a;\n   :b;\nend split\n:D;\nend\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nsplit\n   -[hidden]->\n   :A;\nsplit again\n   -[hidden]->\n   :B;\nsplit again\n   -[hidden]->\n   :C;\nend split\n:D;\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nsplit\n   -[hidden]->\n   :A;\nsplit again\n   -[hidden]->\n   :a;\n   :b;\nsplit again\n   -[hidden]->\n   (Z)\nend split\n:D;\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nstart\nsplit\n   :A;\n   kill\nsplit again\n   :B;\n   detach\nsplit again\n   :C;\n   kill\nend split\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nstart\nsplit\n   :A;\n   kill\nsplit again\n   :b;\n   :c;\n   detach\nsplit again\n   (Z)\n   detach\nsplit again\n   end\nsplit again\n   stop\nend split\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n\nstart\n:foo1;\nfloating note left: This is a note\n:foo2;\nnote right\n  This note is on several\n  //lines// and can\n  contain <b>HTML</b>\n  ====\n  * Calling the method \"\"foo()\"\" is prohibited\nend note\nstop\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nstart\nrepeat :Enter data;\n:Submit;\nbackward :Warning;\nnote right: Note\nrepeat while (Valid?) is (No) not (Yes)\nstop\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nstart\npartition \"**process** HelloWorld\" {\n    note\n        This is my note\n        ----\n        //Creole test//\n    end note\n    :Ready;\n    :HelloWorld(i)>\n    :Hello-Sent;\n}\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n\nstart\n:starting progress;\n#HotPink:reading configuration files\nThese files should be edited at this point!;\n#AAAAAA:ending of the process;\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nstart\npartition #red/white testPartition {\n        #blue\\green:testActivity;\n}\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nskinparam ArrowHeadColor none\nstart\n:Hello world;\n:This is on defined on\nseveral **lines**;\nstop\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nskinparam ArrowHeadColor none\nstart\nrepeat :Enter data;\n:Submit;\nbackward :Warning;\nrepeat while (Valid?) is (No) not (Yes)\nstop\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n:foo1;\n-> You can put text on arrows;\nif (test) then\n  -[#blue]->\n  :foo2;\n  -[#green,dashed]-> The text can\n  also be on several lines\n  and **very** long...;\n  :foo3;\nelse\n  -[#black,dotted]->\n  :foo4;\nendif\n-[#gray,bold]->\n:foo5;\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nskinparam colorArrowSeparationSpace 1\nstart\n-[#red;#green;#orange;#blue]->\nif(a?)then(yes)\n-[#red]->\n:activity;\n-[#red]->\nif(c?)then(yes)\n-[#maroon,dashed]->\nelse(no)\n-[#red]->\nif(b?)then(yes)\n-[#maroon,dashed]->\nelse(no)\n-[#blue,dashed;dotted]->\n:do a;\n-[#red]->\n:do b;\n-[#red]->\nendif\n-[#red;#maroon,dashed]->\nendif\n-[#red;#maroon,dashed]->\nelseif(e?)then(yes)\n-[#green]->\nif(c?)then(yes)\n-[#maroon,dashed]->\nelse(no)\n-[#green]->\nif(d?)then(yes)\n-[#maroon,dashed]->\nelse(no)\n-[#green]->\n:do something; <<continuous>>\n-[#green]->\nendif\n-[#green;#maroon,dashed]->\npartition dummy {\n:some function;\n}\n-[#green;#maroon,dashed]->\nendif\n-[#green;#maroon,dashed]->\n\nelseif(f?)then(yes)\n-[#orange]->\n:activity; <<continuous>>\n-[#orange]->\nelse(no)\n-[#blue,dashed;dotted]->\nendif\nstop\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nstart\n:Some activity;\n(A)\ndetach\n(A)\n:Other activity;\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nstart\n:The connector below\nwishes he was blue;\n#blue:(B)\n:This next connector\nfeels that she would\nbe better off green;\n#green:(G)\nstop\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nstart\ngroup Initialization \n    :read config file;\n    :init internal variable;\nend group\ngroup Running group\n    :wait for user interaction;\n    :print information;\nend group\n\nstop\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nstart\npartition Initialization {\n    :read config file;\n    :init internal variable;\n}\npartition Running {\n    :wait for user interaction;\n    :print information;\n}\n\nstop\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nstart\npartition #lightGreen \"Input Interface\" {\n    :read config file;\n    :init internal variable;\n}\npartition Running {\n    :wait for user interaction;\n    :print information;\n}\nstop\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nstart\npartition \"[[http://plantuml.com partition_name]]\" {\n    :read doc. on [[http://plantuml.com plantuml_website]];\n    :test diagram;\n}\nend\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nstart\ngroup Group\n  :Activity;\nend group\nfloating note: Note on Group\n\npartition Partition {\n  :Activity;\n}\nfloating note: Note on Partition\n\npackage Package {\n  :Activity;\n}\nfloating note: Note on Package \n\nrectangle Rectangle {\n  :Activity;\n}\nfloating note: Note on Rectangle \n\ncard Card {\n  :Activity;\n}\nfloating note: Note on Card\nend\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n|Swimlane1|\nstart\n:foo1;\n|#AntiqueWhite|Swimlane2|\n:foo2;\n:foo3;\n|Swimlane1|\n:foo4;\n|Swimlane2|\n:foo5;\nstop\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n|#pink|Actor_For_red|\nstart\nif (color?) is (red) then\n#pink:**action red**;\n:foo1;\nelse (not red)\n|#lightgray|Actor_For_no_red|\n#lightgray:**action not red**;\n:foo2;\nendif\n|Next_Actor|\n#lightblue:foo3;\n:foo4;\n|Final_Actor|\n#palegreen:foo5;\nstop\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n|#palegreen|f| fisherman\n|c| cook\n|#gold|e| eater\n|f|\nstart\n:go fish;\n|c|\n:fry fish;\n|e|\n:eat fish;\nstop\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n :start;\n fork\n   :foo1;\n   :foo2;\n fork again\n   :foo3;\n   detach\n endfork\n if (foo4) then\n   :foo5;\n   detach\n endif\n :foo6;\n detach\n :foo7;\n stop\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n :start;\n fork\n   :foo1;\n   :foo2;\n fork again\n   :foo3;\n   kill\n endfork\n if (foo4) then\n   :foo5;\n   kill\n endif\n :foo6;\n kill\n :foo7;\n stop\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n:Ready;\n:next(o)|\n:Receiving;\nsplit\n :nak(i)<\n :ack(o)>\nsplit again\n :ack(i)<\n :next(o)\n on several line|\n :i := i + 1]\n :ack(o)>\nsplit again\n :err(i)<\n :nak(o)>\nsplit again\n :foo/\nsplit again\n :bar\\\\\nsplit again\n :i > 5}\nstop\nend split\n:finish;\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n:action;\n:object; <<object>>\n\n:ObjectNode\ntyped by signal; <<objectSignal>>\n\n:AcceptEventAction\nwithout TimeEvent trigger; <<acceptEvent>>\n\n:SendSignalAction; <<sendSignal>>\n\n:SendObjectAction\nwith signal type; <<sendSignal>>\n\n:Trigger; <<trigger>>\n\n:\\t\\t\\t\\t\\t\\tAcceptEventAction\n\\t\\t\\t\\t\\t\\twith TimeEvent trigger; <<timeEvent>>\n:an action;\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n\nstart\n:ClickServlet.handleRequest();\n:new page;\nif (Page.onSecurityCheck) then (true)\n  :Page.onInit();\n  if (isForward?) then (no)\n    :Process controls;\n    if (continue processing?) then (no)\n      stop\n    endif\n\n    if (isPost?) then (yes)\n      :Page.onPost();\n    else (no)\n      :Page.onGet();\n    endif\n    :Page.onRender();\n  endif\nelse (false)\nendif\n\nif (do redirect?) then (yes)\n  :redirect process;\nelse\n  if (do forward?) then (yes)\n    :Forward request;\n  else (no)\n    :Render page template;\n  endif\nendif\n\nstop\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nskinparam conditionStyle inside\nstart\nrepeat\n  :act1;\n  :act2;\nrepeatwhile (<b>end)\n:act3;\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nstart\nrepeat\n  :act1;\n  :act2;\nrepeatwhile (<b>end)\n:act3;\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nskinparam conditionStyle diamond\nstart\nrepeat\n  :act1;\n  :act2;\nrepeatwhile (<b>end)\n:act3;\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nskinparam conditionStyle InsideDiamond\nstart\nrepeat\n  :act1;\n  :act2;\nrepeatwhile (<b>end)\n:act3;\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nskinparam conditionStyle foo1\nstart\nrepeat\n  :act1;\n  :act2;\nrepeatwhile (<b>end)\n:act3;\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nskinparam ConditionEndStyle diamond\n:A;\nif (decision) then (yes)\n    :B1;\nelse (no)\nendif\n:C;\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nskinparam ConditionEndStyle diamond\n:A;\nif (decision) then (yes)\n    :B1;\nelse (no)\n    :B2;\nendif\n:C;\n@enduml\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nskinparam ConditionEndStyle hline\n:A;\nif (decision) then (yes)\n    :B1;\nelse (no)\nendif\n:C;\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nskinparam ConditionEndStyle hline\n:A;\nif (decision) then (yes)\n    :B1;\nelse (no)\n    :B2;\nendif\n:C;\n@enduml\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nstart\n:init;\n-> test of color;\nif (color?) is (<color:red>red) then\n:print red;\nelse \n:print not red;\nnote right: no color\nendif\npartition End {\n:end;\n}\n-> this is the end;\nend\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Nouveau diagramme d'activitÃ©s Beta syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n<style>\nactivityDiagram {\n  BackgroundColor #33668E\n  BorderColor #33668E\n  FontColor #888\n  FontName arial\n\n  diamond {\n    BackgroundColor #ccf\n    LineColor #00FF00\n    FontColor green\n    FontName arial\n    FontSize 15\n  }\n  arrow {\n    FontColor gold\n    FontName arial\n    FontSize 15\n  }\n  partition {\n    LineColor red\n    FontColor green\n    RoundCorner 10\n    BackgroundColor PeachPuff\n  }\n  note {\n    FontColor Blue\n    LineColor Navy\n    BackgroundColor #ccf\n  }\n}\ndocument {\n   BackgroundColor transparent\n}\n</style>\nstart\n:init;\n-> test of color;\nif (color?) is (<color:red>red) then\n:print red;\nelse \n:print not red;\nnote right: no color\nendif\npartition End {\n:end;\n}\n-> this is the end;\nend\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/activity-diagram-beta"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\nabstract        abstract\nabstract class  \"abstract class\"\nannotation      annotation\ncircle          circle\n()              circle_short_form\nclass           class\nclass           class_stereo  <<stereotype>>\ndiamond         diamond\n<>              diamond_short_form\nentity          entity\nenum            enum\nexception       exception\ninterface       interface\nmetaclass       metaclass\nprotocol        protocol\nstereotype      stereotype\nstruct          struct\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\nClass01 <|-- Class02\nClass03 *-- Class04\nClass05 o-- Class06\nClass07 .. Class08\nClass09 -- Class10\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\nClass11 <|.. Class12\nClass13 --> Class14\nClass15 ..> Class16\nClass17 ..|> Class18\nClass19 <--* Class20\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\nClass21 #-- Class22\nClass23 x-- Class24\nClass25 }-- Class26\nClass27 +-- Class28\nClass29 ^-- Class30\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\nClass01 \"1\" *-- \"many\" Class02 : contains\n\nClass03 o-- Class04 : aggregation\n\nClass05 --> \"1\" Class06\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\nclass Car\n\nDriver - Car : drives >\nCar *- Wheel : have 4 >\nCar -- Person : < owns\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\nclass \"Voici ma classe\" as classe1\nclass classe2 as \"Cette faÃ§on fonctionne aussi\"\n\nclasse2 *-- \"machin/truc\" : utilise\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\nclass $C1\nclass $C2 $C2\nclass \"$C2\" as dollarC2\nremove $C1\nremove $C2\nremove dollarC2\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\nObject <|-- ArrayList\n\nObject : equals()\nArrayList : Object[] elementData\nArrayList : size()\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\nclass Dummy {\n  String data\n  void methods()\n}\n\nclass Flight {\n   flightNumber : Integer\n   departureTime : Date\n}\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\nclass Dummy {\n  {field} Un champ (malgrÃ© les parenthÃ¨ses)\n  {method} Une mÃ©thode\n}\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\n\nclass Machin {\n -champ1\n #champ2\n ~methode1()\n +methode2()\n}\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\nskinparam classAttributeIconSize 0\nclass Machin {\n -champ1\n #champ2\n ~methode1()\n +methode2()\n}\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\nclass Machin {\n champ1\n champ2\n methode1()\n methode2()\n}\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\nclass Machin {\n champ1\n \\~Machin()\n methode1()\n}\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\nclass Dummy {\n  {static} String id\n  {abstract} void methods()\n}\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\nclass Foo1 {\n  You can use\n  several lines\n  ..\n  as you want\n  and group\n  ==\n  things together.\n  __\n  You can have as many groups\n  as you want\n  --\n  End of class\n}\n\nclass User {\n  .. Simple Getter ..\n  + getName()\n  + getAddress()\n  .. Some setter ..\n  + setName()\n  __ private data __\n  int age\n  -- encrypted --\n  String password\n}\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\nclass Object << general >>\nObject <|--- ArrayList\n\nnote top of Object : In java, every class\\nextends this one.\n\nnote \"This is a floating note\" as N1\nnote \"This note is connected\\nto several objects.\" as N2\nObject .. N2\nN2 .. ArrayList\n\nclass Foo\nnote left: On last defined class\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\n\nclass Foo\nnote left: On last defined class\n\nnote top of Foo\n  In java, <size:18>every</size> <u>class</u>\n  <b>extends</b>\n  <i>this</i> one.\nend note\n\nnote as N1\n  This note is <u>also</u>\n  <b><color:royalBlue>on several</color>\n  <s>words</s> lines\n  And this is hosted by <img:sourceforge.jpg>\nend note\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\nclass A {\n{static} int counter\n+void {abstract} start(int timeout)\n}\nnote right of A::counter\n  This member is annotated\nend note\nnote right of A::start\n  This method is now explained in a UML note\nend note\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\nclass A {\n{static} int counter\n+void {abstract} start(int timeoutms)\n+void {abstract} start(Duration timeout)\n}\nnote left of A::counter\n  This member is annotated\nend note\nnote right of A::\"start(int timeoutms)\"\n  This method with int\nend note\nnote right of A::\"start(Duration timeout)\"\n  This method with Duration\nend note\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\n\nclass Dummy\nDummy --> Foo : A link\nnote on link #red: note that is red\n\nDummy --> Foo2 : Another link\nnote right on link #blue\nthis is my note on right link\nand in blue\nend note\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\n\nabstract class AbstractList\nabstract AbstractCollection\ninterface List\ninterface Collection\n\nList <|-- AbstractList\nCollection <|-- AbstractCollection\n\nCollection <|- List\nAbstractCollection <|- AbstractList\nAbstractList <|-- ArrayList\n\nclass ArrayList {\n  Object[] elementData\n  size()\n}\n\nenum TimeUnit {\n  DAYS\n  HOURS\n  MINUTES\n}\n\nannotation SuppressWarnings\n\nannotation Annotation {\n  annotation with members\n  String foo()\n  String bar()\n}\n\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\n\nclass Dummy1 {\n  +myMethods()\n}\n\nclass Dummy2 {\n  +hiddenMethod()\n}\n\nclass Dummy3 <<Serializable>> {\nString name\n}\n\nhide members\nhide <<Serializable>> circle\nshow Dummy1 methods\nshow <<Serializable>> fields\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\nhide private members\nhide protected members\nhide package members\n\nclass Foo {\n  - private\n  # protected\n  ~ package\n}\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\n\nclass Foo1\nclass Foo2\n\nFoo2 *-- Foo1\n\nhide Foo2\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\n\nclass Foo1\nclass Foo2\n\nFoo2 *-- Foo1\n\nremove Foo2\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\nclass C1 $tag13\nenum E1\ninterface I1 $tag13\nC1 -- I1\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\nclass C1 $tag13\nenum E1\ninterface I1 $tag13\nC1 -- I1\n\nhide $tag13\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\nclass C1 $tag13\nenum E1\ninterface I1 $tag13\nC1 -- I1\n\nremove $tag13\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\nclass C1 $tag13 $tag1\nenum E1\ninterface I1 $tag13\nC1 -- I1\n\nremove $tag13\nrestore $tag1\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\nclass C1 $tag13 $tag1\nenum E1\ninterface I1 $tag13\nC1 -- I1\n\nremove *\nrestore $tag1\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\nclass C1\nclass C2\nclass C3\nC1 -- C2\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\nclass C1\nclass C2\nclass C3\nC1 -- C2\n\nhide @unlinked\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\nclass C1\nclass C2\nclass C3\nC1 -- C2\n\nremove @unlinked\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\n\nclass Foo<? extends Element> {\n  int size()\n}\nFoo *- Element\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\n\nclass System << (S,#FF7700) Singleton >>\nclass Date << (D,orchid) >>\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\n\npackage \"Classic Collections\" #DDDDDD {\n  Object <|-- ArrayList\n}\n\npackage com.plantuml {\n  Object <|-- Demo1\n  Demo1 *- Demo2\n}\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\nscale 750 width\npackage foo1 <<Node>> {\n  class Class1\n}\n\npackage foo2 <<Rectangle>> {\n  class Class2\n}\n\npackage foo3 <<Folder>> {\n  class Class3\n}\n\npackage foo4 <<Frame>> {\n  class Class4\n}\n\npackage foo5 <<Cloud>> {\n  class Class5\n}\n\npackage foo6 <<Database>> {\n  class Class6\n}\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\n\nskinparam packageStyle rectangle\n\npackage foo1.foo2 {\n}\n\npackage foo1.foo2.foo3 {\n  class Object\n}\n\nfoo1.foo2 +-- foo1.foo2.foo3\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\n\nclass BaseClass\n\nnamespace net.dummy #DDDDDD {\n    .BaseClass <|-- Person\n    Meeting o-- Person\n\n    .BaseClass <|- Meeting\n}\n\nnamespace net.foo {\n  net.dummy.Person  <|- Person\n  .BaseClass <|-- Person\n\n  net.dummy.Meeting o-- Person\n}\n\nBaseClass <|-- net.unused.Person\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\n\nset separator ::\nclass X1::X2::foo {\n  some info\n}\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\n\nset separator none\nclass X1.X2.foo {\n  some info\n}\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\nclass foo\nbar ()- foo\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\nRoom o- Student\nRoom *-- Chair\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\nStudent -o Room\nChair --* Room\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\nfoo -left-> dummyLeft\nfoo -right-> dummyRight\nfoo -up-> dummyUp\nfoo -down-> dummyDown\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\nleft to right direction\nfoo -left-> dummyLeft\nfoo -right-> dummyRight\nfoo -up-> dummyUp\nfoo -down-> dummyDown\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\nclass Student {\n  Name\n}\nStudent \"0..*\" - \"1..*\" Course\n(Student, Course) .. Enrollment\n\nclass Enrollment {\n  drop()\n  cancel()\n}\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\nclass Student {\n  Name\n}\nStudent \"0..*\" -- \"1..*\" Course\n(Student, Course) . Enrollment\n\nclass Enrollment {\n  drop()\n  cancel()\n}\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\nclass Station {\n    +name: string\n}\n\nclass StationCrossing {\n    +cost: TimeInterval\n}\n\n<> diamond\n\nStationCrossing . diamond\ndiamond - \"from 0..*\" Station\ndiamond - \"to 0..* \" Station\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\n\nskinparam class {\nBackgroundColor PaleGreen\nArrowColor SeaGreen\nBorderColor SpringGreen\n}\nskinparam stereotypeCBackgroundColor YellowGreen\n\nClass01 \"1\" *-- \"many\" Class02 : contains\n\nClass03 o-- Class04 : aggregation\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\n\nskinparam class {\nBackgroundColor PaleGreen\nArrowColor SeaGreen\nBorderColor SpringGreen\nBackgroundColor<<Foo>> Wheat\nBorderColor<<Foo>> Tomato\n}\nskinparam stereotypeCBackgroundColor YellowGreen\nskinparam stereotypeCBackgroundColor<< Foo >> DimGray\n\nclass Class01 <<Foo>>\nclass Class03 <<Foo>>\nClass01 \"1\" *-- \"many\" Class02 : contains\n\nClass03 o-- Class04 : aggregation\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\n\nskinparam backgroundcolor AntiqueWhite/Gold\nskinparam classBackgroundColor Wheat|CornflowerBlue\n\nclass Foo #red-green\nnote left of Foo #blue\\9932CC\n  this is my\n  note on this class\nend note\n\npackage example #GreenYellow/LightGoldenRodYellow {\n  class Dummy\n}\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\n\nclass Bar1\nclass Bar2\ntogether {\n  class Together1\n  class Together2\n  class Together3\n}\nTogether1 - Together2\nTogether2 - Together3\nTogether2 -[hidden]--> Bar1\nBar1 -[hidden]> Bar2\n\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\n' Split into 4 pages\npage 2x2\nskinparam pageMargin 10\nskinparam pageExternalColor gray\nskinparam pageBorderColor black\n\nclass BaseClass\n\nnamespace net.dummy #DDDDDD {\n    .BaseClass <|-- Person\n    Meeting o-- Person\n\n    .BaseClass <|- Meeting\n\n}\n\nnamespace net.foo {\n  net.dummy.Person  <|- Person\n  .BaseClass <|-- Person\n\n  net.dummy.Meeting o-- Person\n}\n\nBaseClass <|-- net.unused.Person\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\nclass ArrayList implements List\nclass ArrayList extends AbstractList\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\nclass A extends B, C {\n}\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\ntitle Bracketed line style without label\nclass foo\nclass bar\nbar1 : [bold]  \nbar2 : [dashed]\nbar3 : [dotted]\nbar4 : [hidden]\nbar5 : [plain] \n\nfoo --> bar\nfoo -[bold]-> bar1\nfoo -[dashed]-> bar2\nfoo -[dotted]-> bar3\nfoo -[hidden]-> bar4\nfoo -[plain]-> bar5\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\ntitle Bracketed line style with label\nclass foo\nclass bar\nbar1 : [bold]  \nbar2 : [dashed]\nbar3 : [dotted]\nbar4 : [hidden]\nbar5 : [plain] \n\nfoo --> bar          : â\nfoo -[bold]-> bar1   : [bold]\nfoo -[dashed]-> bar2 : [dashed]\nfoo -[dotted]-> bar3 : [dotted]\nfoo -[hidden]-> bar4 : [hidden]\nfoo -[plain]-> bar5  : [plain]\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\ntitle Bracketed line color\nclass foo\nclass bar\nbar1 : [#red]\nbar2 : [#green]\nbar3 : [#blue]\n\nfoo --> bar\nfoo -[#red]-> bar1     : [#red]\nfoo -[#green]-> bar2   : [#green]\nfoo -[#blue]-> bar3    : [#blue]\n'foo -[#blue;#yellow;#green]-> bar4\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\ntitle Bracketed line thickness\nclass foo\nclass bar\nbar1 : [thickness=1]\nbar2 : [thickness=2]\nbar3 : [thickness=4]\nbar4 : [thickness=8]\nbar5 : [thickness=16]\n\nfoo --> bar                 : â\nfoo -[thickness=1]-> bar1   : [1]\nfoo -[thickness=2]-> bar2   : [2]\nfoo -[thickness=4]-> bar3   : [4]\nfoo -[thickness=8]-> bar4   : [8]\nfoo -[thickness=16]-> bar5  : [16]\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\ntitle Bracketed line style mix\nclass foo\nclass bar\nbar1 : [#red,thickness=1]\nbar2 : [#red,dashed,thickness=2]\nbar3 : [#green,dashed,thickness=4]\nbar4 : [#blue,dotted,thickness=8]\nbar5 : [#blue,plain,thickness=16]\n\nfoo --> bar                             : â\nfoo -[#red,thickness=1]-> bar1          : [#red,1]\nfoo -[#red,dashed,thickness=2]-> bar2   : [#red,dashed,2]\nfoo -[#green,dashed,thickness=4]-> bar3 : [#green,dashed,4]\nfoo -[#blue,dotted,thickness=8]-> bar4  : [blue,dotted,8]\nfoo -[#blue,plain,thickness=16]-> bar5  : [blue,plain,16]\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\nclass foo\nfoo --> bar : normal\nfoo --> bar1 #line:red;line.bold;text:red  : red bold\nfoo --> bar2 #green;line.dashed;text:green : green dashed\nfoo --> bar3 #blue;line.dotted;text:blue   : blue dotted\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\nabstract   abstract\nannotation annotation #pink ##[bold]red\nclass      class      #palegreen ##[dashed]green\ninterface  interface  #aliceblue ##[dotted]blue\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\nabstract   abstract\nannotation annotation #pink;line:red;line.bold;text:red\nclass      class      #palegreen;line:green;line.dashed;text:green\ninterface  interface  #aliceblue;line:blue;line.dotted;text:blue\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\nclass bar #line:green;back:lightblue\nclass bar2 #lightblue;line:green\n\nclass Foo1 #back:red;line:00FFFF\nclass FooDashed #line.dashed:blue\nclass FooDotted #line.dotted:blue\nclass FooBold #line.bold\nclass Demo1 #back:lightgreen|yellow;header:blue/red\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\nclass Foo {\n+ field1\n+ field2\n}\n\nclass Bar {\n+ field3\n+ field4\n}\n\nFoo::field1 --> Bar::field3 : foo\nFoo::field2 --> Bar::field4 : bar\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\nleft to right direction\n\nclass User {\n  id : INTEGER\n  ..\n  other_id : INTEGER\n}\n\nclass Email {\n  id : INTEGER\n  ..\n  user_id : INTEGER\n  address : INTEGER\n}\n\nUser::id *-- Email::user_id\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\nskinparam groupInheritance 1\n\nA1 <|-- B1\n\nA2 <|-- B2\nA2 <|-- C2\n\nA3 <|-- B3\nA3 <|-- C3\nA3 <|-- D3\n\nA4 <|-- B4\nA4 <|-- C4\nA4 <|-- D4\nA4 <|-- E4\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\nskinparam groupInheritance 2\n\nA1 <|-- B1\n\nA2 <|-- B2\nA2 <|-- C2\n\nA3 <|-- B3\nA3 <|-- C3\nA3 <|-- D3\n\nA4 <|-- B4\nA4 <|-- C4\nA4 <|-- D4\nA4 <|-- E4\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\nskinparam groupInheritance 3\n\nA1 <|-- B1\n\nA2 <|-- B2\nA2 <|-- C2\n\nA3 <|-- B3\nA3 <|-- C3\nA3 <|-- D3\n\nA4 <|-- B4\nA4 <|-- C4\nA4 <|-- D4\nA4 <|-- E4\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\nskinparam groupInheritance 4\n\nA1 <|-- B1\n\nA2 <|-- B2\nA2 <|-- C2\n\nA3 <|-- B3\nA3 <|-- C3\nA3 <|-- D3\n\nA4 <|-- B4\nA4 <|-- C4\nA4 <|-- D4\nA4 <|-- E4\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\nclass Class\nobject Object\njson JSON {\n   \"fruit\":\"Apple\",\n   \"size\":\"Large\",\n   \"color\": [\"Red\", \"Green\"]\n}\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\nclass A.B.C.D.Z {\n}\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\nset separator none\nclass A.B.C.D.Z {\n}\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\n!pragma useIntermediatePackages false\nclass A.B.C.D.Z {\n}\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\nset separator none\npackage A.B.C.D {\n  class Z {\n  }\n}\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\nclass class1\nclass class2\n\nclass1 [Qualifier] - class2\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\n    interface Map<K,V>\n    class HashMap<Long,Customer>\n\n    Map <|.. HashMap\n    Shop [customerId: long] ---> \"customer\\n1\" Customer\n    HashMap [id: Long] -r-> \"value\" Customer\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\nclass a\nclass b\npackage A {\n  class a1\n  class a2\n  class a3\n  class a4\n  class a5\n  package sub_a {\n   class sa1\n   class sa2\n   class sa3\n  }\n}\n  \npackage B {\n  class b1\n  class b2\n  class b3\n  class b4\n  class b5\n  package sub_b {\n   class sb1\n   class sb2\n   class sb3\n  }\n}\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\n!pragma layout smetana\nclass a\nclass b\npackage A {\n  class a1\n  class a2\n  class a3\n  class a4\n  class a5\n  package sub_a {\n   class sa1\n   class sa2\n   class sa3\n  }\n}\n  \npackage B {\n  class b1\n  class b2\n  class b3\n  class b4\n  class b5\n  package sub_b {\n   class sb1\n   class sb2\n   class sb3\n  }\n}\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\nleft to right direction\nclass a\nclass b\npackage A {\n  class a1\n  class a2\n  class a3\n  class a4\n  class a5\n  package sub_a {\n   class sa1\n   class sa2\n   class sa3\n  }\n}\n  \npackage B {\n  class b1\n  class b2\n  class b3\n  class b4\n  class b5\n  package sub_b {\n   class sb1\n   class sb2\n   class sb3\n  }\n}\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de Classe (syntaxe et caractÃ©ristiques)",
+    "code": "@startuml\n!pragma layout smetana\nleft to right direction\nclass a\nclass b\npackage A {\n  class a1\n  class a2\n  class a3\n  class a4\n  class a5\n  package sub_a {\n   class sa1\n   class sa2\n   class sa3\n  }\n}\n  \npackage B {\n  class b1\n  class b2\n  class b3\n  class b4\n  class b5\n  package sub_b {\n   class sb1\n   class sb2\n   class sb3\n  }\n}\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/class-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nAlice -> Bob: Authentication Request\nBob --> Alice: Authentication Response\n\nAlice -> Bob: Another authentication Request\nAlice <-- Bob: Another authentication Response\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nparticipant Participant as Foo\nactor       Actor       as Foo1\nboundary    Boundary    as Foo2\ncontrol     Control     as Foo3\nentity      Entity      as Foo4\ndatabase    Database    as Foo5\ncollections Collections as Foo6\nqueue       Queue       as Foo7\nFoo -> Foo1 : To actor \nFoo -> Foo2 : To boundary\nFoo -> Foo3 : To control\nFoo -> Foo4 : To entity\nFoo -> Foo5 : To database\nFoo -> Foo6 : To collections\nFoo -> Foo7: To queue\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nactor Bob #red\n' The only difference between actor\n'and participant is the drawing\nparticipant Alice\nparticipant \"I have a really\\nlong name\" as L #99FF99\n/' You can also declare:\n   participant L as \"I have a really\\nlong name\"  #99FF99\n  '/\n\nAlice->Bob: Authentication Request\nBob->Alice: Authentication Response\nBob->L: Log transaction\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nparticipant Last order 30\nparticipant Middle order 20\nparticipant First order 10\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nparticipant Participant [\n    =Title\n    ----\n    \"\"SubTitle\"\"\n]\n\nparticipant Bob\n\nParticipant -> Bob\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nAlice -> \"Bob()\" : Hello\n\"Bob()\" -> \"This is very\\nlong\" as Long\n' You can also declare:\n' \"Bob()\" -> Long as \"This is very\\nlong\"\nLong --> \"Bob()\" : ok\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nAlice -> Alice: This is a signal to self.\\nIt also demonstrates\\nmultiline \\ntext\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nAlice <- Alice: This is a signal to self.\\nIt also demonstrates\\nmultiline \\ntext\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nskinparam sequenceMessageAlign right\nBob -> Alice : Request\nAlice -> Bob : Response\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nskinparam responseMessageBelowArrow true\nBob -> Alice : hello\nBob <- Alice : ok\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nBob ->x Alice\nBob -> Alice\nBob ->> Alice\nBob -\\ Alice\nBob \\\\- Alice\nBob //-- Alice\n\nBob ->o Alice\nBob o\\\\-- Alice\n\nBob <-> Alice\nBob <->o Alice\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nBob -[#red]> Alice : bonjour\nAlice -[#0000FF]->Bob : ok\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nautonumber\nBob -> Alice : Authentication Request\nBob <- Alice : Authentication Response\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nautonumber\nBob -> Alice : Authentication Request\nBob <- Alice : Authentication Response\n\nautonumber 15\nBob -> Alice : Another authentication Request\nBob <- Alice : Another authentication Response\n\nautonumber 40 10\nBob -> Alice : Yet another authentication Request\nBob <- Alice : Yet another authentication Response\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nautonumber \"<b>[000]\"\nBob -> Alice : Authentication Request\nBob <- Alice : Authentication Response\n\nautonumber 15 \"<b>(<u>##</u>)\"\nBob -> Alice : Another authentication Request\nBob <- Alice : Another authentication Response\n\nautonumber 40 10 \"<font color=red><b>Message 0  \"\nBob -> Alice : Yet another authentication Request\nBob <- Alice : Yet another authentication Response\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nautonumber 10 10 \"<b>[000]\"\nBob -> Alice : Authentication Request\nBob <- Alice : Authentication Response\n\nautonumber stop\nBob -> Alice : dummy\n\nautonumber resume \"<font color=red><b>Message 0  \"\nBob -> Alice : Yet another authentication Request\nBob <- Alice : Yet another authentication Response\n\nautonumber stop\nBob -> Alice : dummy\n\nautonumber resume 1 \"<font color=blue><b>Message 0  \"\nBob -> Alice : Yet another authentication Request\nBob <- Alice : Yet another authentication Response\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nautonumber 1.1.1\nAlice -> Bob: Authentication request\nBob --> Alice: Response\n\nautonumber inc A\n'Now we have 2.1.1\nAlice -> Bob: Another authentication request\nBob --> Alice: Response\n\nautonumber inc B\n'Now we have 2.2.1\nAlice -> Bob: Another authentication request\nBob --> Alice: Response\n\nautonumber inc A\n'Now we have 3.1.1\nAlice -> Bob: Another authentication request\nautonumber inc B\n'Now we have 3.2.1\nBob --> Alice: Response\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nautonumber 10\nAlice -> Bob\nnote right\n  the <U+0025>autonumber<U+0025> works everywhere.\n  Here, its value is ** %autonumber% **\nend note\nBob --> Alice: //This is the response %autonumber%//\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n\nheader Page Header\nfooter Page %page% of %lastpage%\n\ntitle Example Title\n\nAlice -> Bob : message 1\nAlice -> Bob : message 2\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n\nAlice -> Bob : message 1\nAlice -> Bob : message 2\n\nnewpage\n\nAlice -> Bob : message 3\nAlice -> Bob : message 4\n\nnewpage A title for the\\nlast page\n\nAlice -> Bob : message 5\nAlice -> Bob : message 6\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nAlice -> Bob: Authentication Request\n\nalt successful case\n\n    Bob -> Alice: Authentication Accepted\n\nelse some kind of failure\n\n    Bob -> Alice: Authentication Failure\n    group My own label\n    Alice -> Log : Log attack start\n        loop 1000 times\n            Alice -> Bob: DNS Attack\n        end\n    Alice -> Log : Log attack end\n    end\n\nelse Another type of failure\n\n   Bob -> Alice: Please repeat\n\nend\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nAlice -> Bob: Authentication Request\nBob -> Alice: Authentication Failure\ngroup My own label [My own label 2]\n    Alice -> Log : Log attack start\n    loop 1000 times\n        Alice -> Bob: DNS Attack\n    end\n    Alice -> Log : Log attack end\nend\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nAlice->Bob : hello\nnote left: this is a first note\n\nBob->Alice : ok\nnote right: this is another note\n\nBob->Bob : I am thinking\nnote left\na note\ncan also be defined\non several lines\nend note\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nparticipant Alice\nparticipant Bob\nnote left of Alice #aqua\nThis is displayed\nleft of Alice.\nend note\n\nnote right of Alice: This is displayed right of Alice.\n\nnote over Alice: This is displayed over Alice.\n\nnote over Alice, Bob #FFAAAA: This is displayed\\n over Bob and Alice.\n\nnote over Bob, Alice\nThis is yet another\nexample of\na long note.\nend note\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\ncaller -> server : conReq\nhnote over caller : idle\ncaller <- server : conConf\nrnote over server\n \"r\" as rectangle\n \"h\" as hexagon\nendrnote\nrnote over server\n this is\n on several\n lines\nendrnote\nhnote over caller\n this is\n on several\n lines\nendhnote\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nAlice->Bob:m1\nBob->Charlie:m2\nnote over Alice, Charlie: Old method for note over all part. with:\\n \"\"note over //FirstPart, LastPart//\"\".\nnote across: New method with:\\n\"\"note across\"\"\nBob->Alice\nhnote across:Note across all part.\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nnote over Alice : initial state of Alice\nnote over Bob : initial state of Bob\nBob -> Alice : hello\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nnote over Alice : initial state of Alice\n/ note over Bob : initial state of Bob\nBob -> Alice : hello\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nparticipant Alice\nparticipant \"The **Famous** Bob\" as Bob\n\nAlice -> Bob : hello --there--\n... Some ~~long delay~~ ...\nBob -> Alice : ok\nnote left\n  This is **bold**\n  This is //italics//\n  This is \"\"monospaced\"\"\n  This is --stroked--\n  This is __underlined__\n  This is ~~waved~~\nend note\n\nAlice -> Bob : A //well formatted// message\nnote right of Alice\n This is <back:cadetblue><size:18>displayed</size></back>\n __left of__ Alice.\nend note\nnote left of Bob\n <u:red>This</u> is <color #118888>displayed</color>\n **<color purple>left of</color> <s:red>Alice</strike> Bob**.\nend note\nnote over Alice, Bob\n <w:#FF33FF>This is hosted</w> by <img sourceforge.jpg>\nend note\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n\n== Initialization ==\n\nAlice -> Bob: Authentication Request\nBob --> Alice: Authentication Response\n\n== Repetition ==\n\nAlice -> Bob: Another authentication Request\nAlice <-- Bob: another authentication Response\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nparticipant Alice\nactor Bob\n\nref over Alice, Bob : init\n\nAlice -> Bob : hello\n\nref over Bob\n  This can be on\n  several lines\nend ref\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n\nAlice -> Bob: Authentication Request\n...\nBob --> Alice: Authentication Response\n...5 minutes later...\nBob --> Alice: Bye !\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nskinparam maxMessageSize 50\nparticipant a\nparticipant b\na -> b :this\\nis\\nmanually\\ndone\na -> b :this is a very long message on several words\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n\nAlice -> Bob: message 1\nBob --> Alice: ok\n|||\nAlice -> Bob: message 2\nBob --> Alice: ok\n||45||\nAlice -> Bob: message 3\nBob --> Alice: ok\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nparticipant User\n\nUser -> A: DoWork\nactivate A\n\nA -> B: << createRequest >>\nactivate B\n\nB -> C: DoWork\nactivate C\nC --> B: WorkDone\ndestroy C\n\nB --> A: RequestCreated\ndeactivate B\n\nA -> User: Done\ndeactivate A\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nparticipant User\n\nUser -> A: DoWork\nactivate A #FFBBBB\n\nA -> A: Internal call\nactivate A #DarkSalmon\n\nA -> B: << createRequest >>\nactivate B\n\nB --> A: RequestCreated\ndeactivate B\ndeactivate A\nA -> User: Done\ndeactivate A\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nBob -> Alice : hello\nactivate Alice\nAlice -> Alice : some action\nreturn bye\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nBob -> Alice : hello\n\ncreate Other\nAlice -> Other : new\n\ncreate control String\nAlice -> String\nnote right : You can also put notes!\n\nAlice --> Bob : ok\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nalice -> bob ++ : hello\nbob -> bob ++ : self call\nbob -> bib ++  #005500 : hello\nbob -> george ** : create\nreturn done\nreturn rc\nbob -> george !! : delete\nreturn success\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nalice   ->  bob     ++   : hello1\nbob     ->  charlie --++ : hello2\ncharlie --> alice   --   : ok\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n@startuml\nalice -> bob   --++ #gold: hello\nbob   -> alice --++ #gold: you too\nalice -> bob   --: step1\nalice -> bob   : step2\n@enduml\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n[-> A: DoWork\n\nactivate A\n\nA -> A: Internal call\nactivate A\n\nA ->] : << createRequest >>\n\nA<--] : RequestCreated\ndeactivate A\n[<- A: Done\ndeactivate A\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n[-> Bob\n[o-> Bob\n[o->o Bob\n[x-> Bob\n\n[<- Bob\n[x<- Bob\n\nBob ->]\nBob ->o]\nBob o->o]\nBob ->x]\n\nBob <-]\nBob x<-]\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n?-> Alice    : \"\"?->\"\"\\n**short** to actor1\n[-> Alice    : \"\"[->\"\"\\n**from start** to actor1\n[-> Bob      : \"\"[->\"\"\\n**from start** to actor2\n?-> Bob      : \"\"?->\"\"\\n**short** to actor2\nAlice ->]    : \"\"->]\"\"\\nfrom actor1 **to end**\nAlice ->?    : \"\"->?\"\"\\n**short** from actor1\nAlice -> Bob : \"\"->\"\" \\nfrom actor1 to actor2\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n!pragma teoz true\n\n{start} Alice -> Bob : commencer a faire quelque chose pour une certaine duree\nBob -> Max : quelque chose \nMax -> Bob : quelque chose d'autre\n{end} Bob -> Alice : terminer\n\n{start} <-> {end} : la duree en question\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n\nparticipant \"Famous Bob\" as Bob << Generated >>\nparticipant Alice << (C,#ADD1B2) Testable >>\n\nBob->Alice: First message\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n\nskinparam guillemet false\nparticipant \"Famous Bob\" as Bob << Generated >>\nparticipant Alice << (C,#ADD1B2) Testable >>\n\nBob->Alice: First message\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n\nparticipant Bob << (C,#ADD1B2) >>\nparticipant Alice << (C,#ADD1B2) >>\n\nBob->Alice: First message\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nskinparam stereotypePosition top\n\nparticipant A<<st1>>\nparticipant B<<st2>>\nA --> B : stereo test\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nskinparam stereotypePosition bottom\n\nparticipant A<<st1>>\nparticipant B<<st2>>\nA --> B : stereo test\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n\ntitle __Simple__ **communication** example\n\nAlice -> Bob: Authentication Request\nBob -> Alice: Authentication Response\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n\ntitle __Simple__ communication example\\non several lines\n\nAlice -> Bob: Authentication Request\nBob -> Alice: Authentication Response\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n\ntitle\n <u>Simple</u> communication example\n on <i>several</i> lines and using <font color=red>html</font>\n This is hosted by <img:sourceforge.jpg>\nend title\n\nAlice -> Bob: Authentication Request\nBob -> Alice: Authentication Response\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n\nbox \"Internal Service\" #LightBlue\nparticipant Bob\nparticipant Alice\nend box\nparticipant Other\n\nBob -> Alice : hello\nAlice -> Other : hello\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n\nhide footbox\ntitle Footer removed\n\nAlice -> Bob: Authentication Request\nBob --> Alice: Authentication Response\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nskinparam sequenceArrowThickness 2\nskinparam roundcorner 20\nskinparam maxmessagesize 60\nskinparam sequenceParticipant underline\n\nactor User\nparticipant \"First Class\" as A\nparticipant \"Second Class\" as B\nparticipant \"Last Class\" as C\n\nUser -> A: DoWork\nactivate A\n\nA -> B: Create Request\nactivate B\n\nB -> C: DoWork\nactivate C\nC --> B: WorkDone\ndestroy C\n\nB --> A: Request Created\ndeactivate B\n\nA --> User: Done\ndeactivate A\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nskinparam backgroundColor #EEEBDC\nskinparam handwritten true\n\nskinparam sequence {\nArrowColor DeepSkyBlue\nActorBorderColor DeepSkyBlue\nLifeLineBorderColor blue\nLifeLineBackgroundColor #A9DCDF\n\nParticipantBorderColor DeepSkyBlue\nParticipantBackgroundColor DodgerBlue\nParticipantFontName Impact\nParticipantFontSize 17\nParticipantFontColor #A9DCDF\n\nActorBackgroundColor aqua\nActorFontColor DeepSkyBlue\nActorFontSize 17\nActorFontName Aapex\n}\n\nactor User\nparticipant \"First Class\" as A\nparticipant \"Second Class\" as B\nparticipant \"Last Class\" as C\n\nUser -> A: DoWork\nactivate A\n\nA -> B: Create Request\nactivate B\n\nB -> C: DoWork\nactivate C\nC --> B: WorkDone\ndestroy C\n\nB --> A: Request Created\ndeactivate B\n\nA --> User: Done\ndeactivate A\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nskinparam ParticipantPadding 20\nskinparam BoxPadding 10\n\nbox \"Foo1\"\nparticipant Alice1\nparticipant Alice2\nend box\nbox \"Foo2\"\nparticipant Bob1\nparticipant Bob2\nend box\nAlice1 -> Bob1 : hello\nAlice1 -> Out : out\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nparticipant Alice as a\nparticipant Bob   as b\na ->     b : \"\"->   \"\"\na ->>    b : \"\"->>  \"\"\na -\\     b : \"\"-\\   \"\"\na -\\\\    b : \"\"-\\\\\\\\\"\"\na -/     b : \"\"-/   \"\"\na -//    b : \"\"-//  \"\"\na ->x    b : \"\"->x  \"\"\na x->    b : \"\"x->  \"\"\na o->    b : \"\"o->  \"\"\na ->o    b : \"\"->o  \"\"\na o->o   b : \"\"o->o \"\"\na <->    b : \"\"<->  \"\"\na o<->o  b : \"\"o<->o\"\"\na x<->x  b : \"\"x<->x\"\"\na ->>o   b : \"\"->>o \"\"\na -\\o    b : \"\"-\\o  \"\"\na -\\\\o   b : \"\"-\\\\\\\\o\"\"\na -/o    b : \"\"-/o  \"\"\na -//o   b : \"\"-//o \"\"\na x->o   b : \"\"x->o \"\"\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nparticipant Alice as a\nparticipant Bob   as b\na ->     a : \"\"->   \"\"\na ->>    a : \"\"->>  \"\"\na -\\     a : \"\"-\\   \"\"\na -\\\\    a : \"\"-\\\\\\\\\"\"\na -/     a : \"\"-/   \"\"\na -//    a : \"\"-//  \"\"\na ->x    a : \"\"->x  \"\"\na x->    a : \"\"x->  \"\"\na o->    a : \"\"o->  \"\"\na ->o    a : \"\"->o  \"\"\na o->o   a : \"\"o->o \"\"\na <->    a : \"\"<->  \"\"\na o<->o  a : \"\"o<->o\"\"\na x<->x  a : \"\"x<->x\"\"\na ->>o   a : \"\"->>o \"\"\na -\\o    a : \"\"-\\o  \"\"\na -\\\\o   a : \"\"-\\\\\\\\o\"\"\na -/o    a : \"\"-/o  \"\"\na -//o   a : \"\"-//o \"\"\na x->o   a : \"\"x->o \"\"\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nparticipant Alice as a\nparticipant Bob   as b\n[->      b : \"\"[->   \"\"\n[->>     b : \"\"[->>  \"\"\n[-\\      b : \"\"[-\\   \"\"\n[-\\\\     b : \"\"[-\\\\\\\\\"\"\n[-/      b : \"\"[-/   \"\"\n[-//     b : \"\"[-//  \"\"\n[->x     b : \"\"[->x  \"\"\n[x->     b : \"\"[x->  \"\"\n[o->     b : \"\"[o->  \"\"\n[->o     b : \"\"[->o  \"\"\n[o->o    b : \"\"[o->o \"\"\n[<->     b : \"\"[<->  \"\"\n[o<->o   b : \"\"[o<->o\"\"\n[x<->x   b : \"\"[x<->x\"\"\n[->>o    b : \"\"[->>o \"\"\n[-\\o     b : \"\"[-\\o  \"\"\n[-\\\\o    b : \"\"[-\\\\\\\\o\"\"\n[-/o     b : \"\"[-/o  \"\"\n[-//o    b : \"\"[-//o \"\"\n[x->o    b : \"\"[x->o \"\"\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nparticipant Alice as a\nparticipant Bob   as b\na ->]      : \"\"->]   \"\"\na ->>]     : \"\"->>]  \"\"\na -\\]      : \"\"-\\]   \"\"\na -\\\\]     : \"\"-\\\\\\\\]\"\"\na -/]      : \"\"-/]   \"\"\na -//]     : \"\"-//]  \"\"\na ->x]     : \"\"->x]  \"\"\na x->]     : \"\"x->]  \"\"\na o->]     : \"\"o->]  \"\"\na ->o]     : \"\"->o]  \"\"\na o->o]    : \"\"o->o] \"\"\na <->]     : \"\"<->]  \"\"\na o<->o]   : \"\"o<->o]\"\"\na x<->x]   : \"\"x<->x]\"\"\na ->>o]    : \"\"->>o] \"\"\na -\\o]     : \"\"-\\o]  \"\"\na -\\\\o]    : \"\"-\\\\\\\\o]\"\"\na -/o]     : \"\"-/o]  \"\"\na -//o]    : \"\"-//o] \"\"\na x->o]    : \"\"x->o] \"\"\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nparticipant Alice as a\nparticipant Bob   as b\na ->     b : //Long long label//\n?->      b : \"\"?->   \"\"\n?->>     b : \"\"?->>  \"\"\n?-\\      b : \"\"?-\\   \"\"\n?-\\\\     b : \"\"?-\\\\\\\\\"\"\n?-/      b : \"\"?-/   \"\"\n?-//     b : \"\"?-//  \"\"\n?->x     b : \"\"?->x  \"\"\n?x->     b : \"\"?x->  \"\"\n?o->     b : \"\"?o->  \"\"\n?->o     b : \"\"?->o  \"\"\n?o->o    b : \"\"?o->o \"\"\n?<->     b : \"\"?<->  \"\"\n?o<->o   b : \"\"?o<->o\"\"\n?x<->x   b : \"\"?x<->x\"\"\n?->>o    b : \"\"?->>o \"\"\n?-\\o     b : \"\"?-\\o  \"\"\n?-\\\\o    b : \"\"?-\\\\\\\\o \"\"\n?-/o     b : \"\"?-/o  \"\"\n?-//o    b : \"\"?-//o \"\"\n?x->o    b : \"\"?x->o \"\"\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nparticipant Alice as a\nparticipant Bob   as b\na ->     b : //Long long label//\na ->?      : \"\"->?   \"\"\na ->>?     : \"\"->>?  \"\"\na -\\?      : \"\"-\\?   \"\"\na -\\\\?     : \"\"-\\\\\\\\?\"\"\na -/?      : \"\"-/?   \"\"\na -//?     : \"\"-//?  \"\"\na ->x?     : \"\"->x?  \"\"\na x->?     : \"\"x->?  \"\"\na o->?     : \"\"o->?  \"\"\na ->o?     : \"\"->o?  \"\"\na o->o?    : \"\"o->o? \"\"\na <->?     : \"\"<->?  \"\"\na o<->o?   : \"\"o<->o?\"\"\na x<->x?   : \"\"x<->x?\"\"\na ->>o?    : \"\"->>o? \"\"\na -\\o?     : \"\"-\\o?  \"\"\na -\\\\o?    : \"\"-\\\\\\\\o?\"\"\na -/o?     : \"\"-/o?  \"\"\na -//o?    : \"\"-//o? \"\"\na x->o?    : \"\"x->o? \"\"\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nBob -> Alice : hello\nAlice -> Bob : ok\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nskinparam lifelineStrategy nosolid\nBob -> Alice : hello\nAlice -> Bob : ok\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nskinparam lifelineStrategy solid\nBob -> Alice : hello\nAlice -> Bob : ok\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nskinparam style strictuml\nBob -> Alice : hello\nAlice -> Bob : ok\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nparticipant Alice\nparticipant Bob\nparticipant Carol\n\nAlice -> Bob : hello\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nhide unlinked\nparticipant Alice\nparticipant Bob\nparticipant Carol\n\nAlice -> Bob : hello\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nAlice -> Bob: Authentication Request\nalt#Gold #LightBlue Successful case\n    Bob -> Alice: Authentication Accepted\nelse #Pink Failure\n    Bob -> Alice: Authentication Rejected\nend\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nmainframe This is a **mainframe**\nAlice->Bob : Hello\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nA ->(10) B: text 10\nB ->(10) A: text 10\n\nA ->(10) B: text 10\nA (10)<- B: text 10\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nA ->(40) B++: Rq\nB -->(20) A--: Rs\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n!pragma teoz true\nA ->(50) C: Starts\\nwhen 'B' sends\n& B ->(25) C: \\nBut B's message\\n arrives before A's\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n!pragma teoz true\n\nS1 ->(30) S2: msg 1\\n\n& S2 ->(30) S1: msg 2\n\nnote left S1: msg\\nS2 to S1\n& note right S2: msg\\nS1 to S2\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Diagramme de sÃ©quence syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n!pragma teoz true\nAlice -> Bob : hello\n& Bob -> Charlie : hi\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/sequence-diagram"
+  },
+  {
+    "prompt": "Composant SchÃ©ma syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n\n[First component]\n[Another component] as Comp2\ncomponent Comp3\ncomponent [Last\\ncomponent] as Comp4\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/component-diagram"
+  },
+  {
+    "prompt": "Composant SchÃ©ma syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n\n() \"First Interface\"\n() \"Another interface\" as Interf2\ninterface Interf3\ninterface \"Last\\ninterface\" as Interf4\n\n[component]\nfooter //Adding \"component\" to force diagram to be a **component diagram**//\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/component-diagram"
+  },
+  {
+    "prompt": "Composant SchÃ©ma syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n\nDataAccess - [First Component]\n[First Component] ..> HTTP : use\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/component-diagram"
+  },
+  {
+    "prompt": "Composant SchÃ©ma syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n\ninterface \"Data Access\" as DA\n\nDA - [First Component]\n[First Component] ..> HTTP : use\n\nnote left of HTTP : Web Service only\n\nnote right of [First Component]\n  A note can also\n  be on several lines\nend note\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/component-diagram"
+  },
+  {
+    "prompt": "Composant SchÃ©ma syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n\npackage \"Some Group\" {\n  HTTP - [First Component]\n  [Another Component]\n}\n\nnode \"Other Groups\" {\n  FTP - [Second Component]\n  [First Component] --> FTP\n}\n\ncloud {\n  [Example 1]\n}\n\n\ndatabase \"MySql\" {\n  folder \"This is my folder\" {\n    [Folder 3]\n  }\n  frame \"Foo\" {\n    [Frame 4]\n  }\n}\n\n\n[Another Component] --> [Example 1]\n[Example 1] --> [Folder 3]\n[Folder 3] --> [Frame 4]\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/component-diagram"
+  },
+  {
+    "prompt": "Composant SchÃ©ma syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n[Component] --> Interface1\n[Component] -> Interface2\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/component-diagram"
+  },
+  {
+    "prompt": "Composant SchÃ©ma syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nInterface1 <-- [Component]\nInterface2 <- [Component]\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/component-diagram"
+  },
+  {
+    "prompt": "Composant SchÃ©ma syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n[Component] -left-> left\n[Component] -right-> right\n[Component] -up-> up\n[Component] -down-> down\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/component-diagram"
+  },
+  {
+    "prompt": "Composant SchÃ©ma syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nleft to right direction\n[Component] -left-> left\n[Component] -right-> right\n[Component] -up-> up\n[Component] -down-> down\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/component-diagram"
+  },
+  {
+    "prompt": "Composant SchÃ©ma syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n\ninterface \"Data Access\" as DA\n\nDA - [First Component]\n[First Component] ..> HTTP : use\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/component-diagram"
+  },
+  {
+    "prompt": "Composant SchÃ©ma syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nskinparam componentStyle uml1\n\ninterface \"Data Access\" as DA\n\nDA - [First Component]\n[First Component] ..> HTTP : use\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/component-diagram"
+  },
+  {
+    "prompt": "Composant SchÃ©ma syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nskinparam componentStyle rectangle\n\ninterface \"Data Access\" as DA\n\nDA - [First Component]\n[First Component] ..> HTTP : use\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/component-diagram"
+  },
+  {
+    "prompt": "Composant SchÃ©ma syntaxe et caractÃ©ristiques",
+    "code": "@startuml\ncomponent comp1 [\nThis component\nhas a long comment\non several lines\n]\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/component-diagram"
+  },
+  {
+    "prompt": "Composant SchÃ©ma syntaxe et caractÃ©ristiques",
+    "code": "@startuml\ncomponent  [Web Server] #Yellow\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/component-diagram"
+  },
+  {
+    "prompt": "Composant SchÃ©ma syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nsprite $businessProcess [16x16/16] {\nFFFFFFFFFFFFFFFF\nFFFFFFFFFFFFFFFF\nFFFFFFFFFFFFFFFF\nFFFFFFFFFFFFFFFF\nFFFFFFFFFF0FFFFF\nFFFFFFFFFF00FFFF\nFF00000000000FFF\nFF000000000000FF\nFF00000000000FFF\nFFFFFFFFFF00FFFF\nFFFFFFFFFF0FFFFF\nFFFFFFFFFFFFFFFF\nFFFFFFFFFFFFFFFF\nFFFFFFFFFFFFFFFF\nFFFFFFFFFFFFFFFF\nFFFFFFFFFFFFFFFF\n}\n\n\nrectangle \" End to End\\nbusiness process\" <<$businessProcess>> {\n rectangle \"inner process 1\" <<$businessProcess>> as src\n rectangle \"inner process 2\" <<$businessProcess>> as tgt\n src -> tgt\n}\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/component-diagram"
+  },
+  {
+    "prompt": "Composant SchÃ©ma syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n\nskinparam interface {\n  backgroundColor RosyBrown\n  borderColor orange\n}\n\nskinparam component {\n  FontSize 13\n  BackgroundColor<<Apache>> Pink\n  BorderColor<<Apache>> #FF6655\n  FontName Courier\n  BorderColor black\n  BackgroundColor gold\n  ArrowFontName Impact\n  ArrowColor #FF6655\n  ArrowFontColor #777777\n}\n\n() \"Data Access\" as DA\nComponent \"Web Server\" as WS << Apache >>\n\nDA - [First Component]\n[First Component] ..> () HTTP : use\nHTTP - WS\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/component-diagram"
+  },
+  {
+    "prompt": "Composant SchÃ©ma syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n\nskinparam component {\n    backgroundColor<<static_lib>> DarkKhaki\n    backgroundColor<<shared_lib>> Green\n}\n\nskinparam node {\nborderColor Green\nbackgroundColor Yellow\nbackgroundColor<<shared_node>> Magenta\n}\nskinparam databaseBackgroundColor Aqua\n\n[AA] <<static_lib>>\n[BB] <<shared_lib>>\n[CC] <<static_lib>>\n\nnode node1\nnode node2 <<shared node>>\ndatabase Production\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/component-diagram"
+  },
+  {
+    "prompt": "Composant SchÃ©ma syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nskinparam BackgroundColor transparent\nskinparam componentStyle uml2\ncomponent A {\n   component \"A.1\" {\n}\n   component A.44 {\n      [A4.1]\n}\n   component \"A.2\"\n   [A.3]\n   component A.5 [\nA.5] \n   component A.6 [\n]\n}\n[a]->[b]\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/component-diagram"
+  },
+  {
+    "prompt": "Composant SchÃ©ma syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nskinparam BackgroundColor transparent\nskinparam componentStyle rectangle\ncomponent A {\n   component \"A.1\" {\n}\n   component A.44 {\n      [A4.1]\n}\n   component \"A.2\"\n   [A.3]\n   component A.5 [\nA.5] \n   component A.6 [\n]\n}\n[a]->[b]\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/component-diagram"
+  },
+  {
+    "prompt": "Composant SchÃ©ma syntaxe et caractÃ©ristiques",
+    "code": "@startuml\ncomponent C1\ncomponent C2\ncomponent C3\nC1 -- C2\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/component-diagram"
+  },
+  {
+    "prompt": "Composant SchÃ©ma syntaxe et caractÃ©ristiques",
+    "code": "@startuml\ncomponent C1\ncomponent C2\ncomponent C3\nC1 -- C2\n\nhide @unlinked\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/component-diagram"
+  },
+  {
+    "prompt": "Composant SchÃ©ma syntaxe et caractÃ©ristiques",
+    "code": "@startuml\ncomponent C1\ncomponent C2\ncomponent C3\nC1 -- C2\n\nremove @unlinked\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/component-diagram"
+  },
+  {
+    "prompt": "Composant SchÃ©ma syntaxe et caractÃ©ristiques",
+    "code": "@startuml\ncomponent C1 $tag13\ncomponent C2\ncomponent C3 $tag13\nC1 -- C2\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/component-diagram"
+  },
+  {
+    "prompt": "Composant SchÃ©ma syntaxe et caractÃ©ristiques",
+    "code": "@startuml\ncomponent C1 $tag13\ncomponent C2\ncomponent C3 $tag13\nC1 -- C2\n\nhide $tag13\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/component-diagram"
+  },
+  {
+    "prompt": "Composant SchÃ©ma syntaxe et caractÃ©ristiques",
+    "code": "@startuml\ncomponent C1 $tag13\ncomponent C2\ncomponent C3 $tag13\nC1 -- C2\n\nremove $tag13\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/component-diagram"
+  },
+  {
+    "prompt": "Composant SchÃ©ma syntaxe et caractÃ©ristiques",
+    "code": "@startuml\ncomponent C1 $tag13 $tag1\ncomponent C2\ncomponent C3 $tag13\nC1 -- C2\n\nremove $tag13\nrestore $tag1\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/component-diagram"
+  },
+  {
+    "prompt": "Composant SchÃ©ma syntaxe et caractÃ©ristiques",
+    "code": "@startuml\ncomponent C1 $tag13 $tag1\ncomponent C2\ncomponent C3 $tag13\nC1 -- C2\n\nremove *\nrestore $tag1\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/component-diagram"
+  },
+  {
+    "prompt": "Composant SchÃ©ma syntaxe et caractÃ©ristiques",
+    "code": "@startuml\nallowmixing\n\ncomponent Component\n()        Interface\n\njson JSON {\n   \"fruit\":\"Apple\",\n   \"size\":\"Large\",\n   \"color\": [\"Red\", \"Green\"]\n}\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/component-diagram"
+  },
+  {
+    "prompt": "Composant SchÃ©ma syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n[c]\ncomponent C {\n  port p1\n  port p2\n  port p3\n  component c1\n}\n\nc --> p1\nc --> p2\nc --> p3\np1 --> c1\np2 --> c1\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/component-diagram"
+  },
+  {
+    "prompt": "Composant SchÃ©ma syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n[c]\ncomponent C {\n  portin p1\n  portin p2\n  portin p3\n  component c1\n}\n\nc --> p1\nc --> p2\nc --> p3\np1 --> c1\np2 --> c1\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/component-diagram"
+  },
+  {
+    "prompt": "Composant SchÃ©ma syntaxe et caractÃ©ristiques",
+    "code": "@startuml\ncomponent C {\n  portout p1\n  portout p2\n  portout p3\n  component c1\n}\n[o]\np1 --> o\np2 --> o\np3 --> o\nc1 --> p1\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/component-diagram"
+  },
+  {
+    "prompt": "Composant SchÃ©ma syntaxe et caractÃ©ristiques",
+    "code": "@startuml\n[i]\ncomponent C {\n  portin p1\n  portin p2\n  portin p3\n  portout po1\n  portout po2\n  portout po3\n  component c1\n}\n[o]\n\ni --> p1\ni --> p2\ni --> p3\np1 --> c1\np2 --> c1\npo1 --> o\npo2 --> o\npo3 --> o\nc1 --> po1\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/component-diagram"
+  },
+  {
+    "prompt": "Deployment Diagram syntax and features",
+    "code": "@startuml\naction action\nactor actor\nactor/ \"actor/\"\nagent agent\nartifact artifact\nboundary boundary\ncard card\ncircle circle\ncloud cloud\ncollections collections\ncomponent component\ncontrol control\ndatabase database\nentity entity\nfile file\nfolder folder\nframe frame\nhexagon hexagon\ninterface interface\nlabel label\nnode node\npackage package\nperson person\nprocess process\nqueue queue\nrectangle rectangle\nstack stack\nstorage storage\nusecase usecase\nusecase/ \"usecase/\"\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/deployment-diagram"
+  },
+  {
+    "prompt": "Deployment Diagram syntax and features",
+    "code": "@startuml\nfolder folder [\nThis is a <b>folder\n----\nYou can use separator\n====\nof different kind\n....\nand style\n]\n\nnode node [\nThis is a <b>node\n----\nYou can use separator\n====\nof different kind\n....\nand style\n]\n\ndatabase database [\nThis is a <b>database\n----\nYou can use separator\n====\nof different kind\n....\nand style\n]\n\nusecase usecase [\nThis is a <b>usecase\n----\nYou can use separator\n====\nof different kind\n....\nand style\n]\n\ncard card [\nThis is a <b>card\n----\nYou can use separator\n====\nof different kind\n....\nand style\n<i><color:blue>(add from V1.2020.7)</color></i>\n]\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/deployment-diagram"
+  },
+  {
+    "prompt": "Deployment Diagram syntax and features",
+    "code": "@startuml\n\nactor actor1\n:actor2:\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/deployment-diagram"
+  },
+  {
+    "prompt": "Deployment Diagram syntax and features",
+    "code": "@startuml\n\ncomponent component1\n[component2]\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/deployment-diagram"
+  },
+  {
+    "prompt": "Deployment Diagram syntax and features",
+    "code": "@startuml\n\ninterface interface1\n() \"interface2\"\n\nlabel \"//interface example//\"\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/deployment-diagram"
+  },
+  {
+    "prompt": "Deployment Diagram syntax and features",
+    "code": "@startuml\n\nusecase usecase1\n(usecase2)\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/deployment-diagram"
+  },
+  {
+    "prompt": "Deployment Diagram syntax and features",
+    "code": "@startuml\n\nnode node1\nnode node2\nnode node3\nnode node4\nnode node5\nnode1 -- node2 : label1\nnode1 .. node3 : label2\nnode1 ~~ node4 : label3\nnode1 == node5\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/deployment-diagram"
+  },
+  {
+    "prompt": "Deployment Diagram syntax and features",
+    "code": "@startuml\n\nartifact artifact1\nartifact artifact2\nartifact artifact3\nartifact artifact4\nartifact artifact5\nartifact artifact6\nartifact artifact7\nartifact artifact8\nartifact artifact9\nartifact artifact10\nartifact1 --> artifact2\nartifact1 --* artifact3\nartifact1 --o artifact4\nartifact1 --+ artifact5\nartifact1 --# artifact6\nartifact1 -->> artifact7\nartifact1 --0 artifact8\nartifact1 --^ artifact9\nartifact1 --(0 artifact10\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/deployment-diagram"
+  },
+  {
+    "prompt": "Deployment Diagram syntax and features",
+    "code": "@startuml\n\ncloud cloud1\ncloud cloud2\ncloud cloud3\ncloud cloud4\ncloud cloud5\ncloud1 -0- cloud2\ncloud1 -0)- cloud3\ncloud1 -(0- cloud4\ncloud1 -(0)- cloud5\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/deployment-diagram"
+  },
+  {
+    "prompt": "Deployment Diagram syntax and features",
+    "code": "@startuml\nactor foo1\nactor foo2\nfoo1 <-0-> foo2\nfoo1 <-(0)-> foo2\n \n(ac1) -le(0)-> left1\nac1 -ri(0)-> right1\nac1 .up(0).> up1\nac1 ~up(0)~> up2\nac1 -do(0)-> down1\nac1 -do(0)-> down2\n \nactor1 -0)- actor2\n \ncomponent comp1\ncomponent comp2\ncomp1 *-0)-+ comp2\n[comp3] <-->> [comp4]\n\nboundary b1\ncontrol c1\nb1 -(0)- c1\n\ncomponent comp1\ninterface interf1\ncomp1 #~~( interf1\n\n:mode1actor: -0)- fooa1\n:mode1actorl: -ri0)- foo1l\n\n[component1] 0)-(0-(0 [componentC]\n() component3 )-0-(0 \"foo\" [componentC]\n\n[aze1] #-->> [aze2]\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/deployment-diagram"
+  },
+  {
+    "prompt": "Deployment Diagram syntax and features",
+    "code": "@startuml\nnode foo\ntitle Bracketed line style without label\nfoo --> bar\nfoo -[bold]-> bar1\nfoo -[dashed]-> bar2\nfoo -[dotted]-> bar3\nfoo -[hidden]-> bar4\nfoo -[plain]-> bar5\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/deployment-diagram"
+  },
+  {
+    "prompt": "Deployment Diagram syntax and features",
+    "code": "@startuml\ntitle Bracketed line style with label\nnode foo\nfoo --> bar          : â\nfoo -[bold]-> bar1   : [bold]\nfoo -[dashed]-> bar2 : [dashed]\nfoo -[dotted]-> bar3 : [dotted]\nfoo -[hidden]-> bar4 : [hidden]\nfoo -[plain]-> bar5  : [plain]\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/deployment-diagram"
+  },
+  {
+    "prompt": "Deployment Diagram syntax and features",
+    "code": "@startuml\ntitle Bracketed line color\nnode  foo\nfoo --> bar\nfoo -[#red]-> bar1     : [#red]\nfoo -[#green]-> bar2   : [#green]\nfoo -[#blue]-> bar3    : [#blue]\nfoo -[#blue;#yellow;#green]-> bar4\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/deployment-diagram"
+  },
+  {
+    "prompt": "Deployment Diagram syntax and features",
+    "code": "@startuml\ntitle Bracketed line thickness\nnode foo\nfoo --> bar                 : â\nfoo -[thickness=1]-> bar1   : [1]\nfoo -[thickness=2]-> bar2   : [2]\nfoo -[thickness=4]-> bar3   : [4]\nfoo -[thickness=8]-> bar4   : [8]\nfoo -[thickness=16]-> bar5  : [16]\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/deployment-diagram"
+  },
+  {
+    "prompt": "Deployment Diagram syntax and features",
+    "code": "@startuml\ntitle Bracketed line style mix\nnode foo\nfoo --> bar                             : â\nfoo -[#red,thickness=1]-> bar1          : [#red,1]\nfoo -[#red,dashed,thickness=2]-> bar2   : [#red,dashed,2]\nfoo -[#green,dashed,thickness=4]-> bar3 : [#green,dashed,4]\nfoo -[#blue,dotted,thickness=8]-> bar4  : [blue,dotted,8]\nfoo -[#blue,plain,thickness=16]-> bar5  : [blue,plain,16]\nfoo -[#blue;#green,dashed,thickness=4]-> bar6  : [blue;green,dashed,4]\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/deployment-diagram"
+  },
+  {
+    "prompt": "Deployment Diagram syntax and features",
+    "code": "@startuml\nnode foo\nfoo --> bar : normal\nfoo --> bar1 #line:red;line.bold;text:red  : red bold\nfoo --> bar2 #green;line.dashed;text:green : green dashed \nfoo --> bar3 #blue;line.dotted;text:blue   : blue dotted\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/deployment-diagram"
+  },
+  {
+    "prompt": "Deployment Diagram syntax and features",
+    "code": "@startuml\nagent a\ncloud c #pink;line:red;line.bold;text:red\nfile  f #palegreen;line:green;line.dashed;text:green\nnode  n #aliceblue;line:blue;line.dotted;text:blue\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/deployment-diagram"
+  },
+  {
+    "prompt": "Deployment Diagram syntax and features",
+    "code": "@startuml\nagent a\ncloud c #pink;line:red;line.bold;text:red [\nc\ncloud description\n]\nfile  f #palegreen;line:green;line.dashed;text:green {\n[c1]\n[c2]\n}\nframe frame {\nnode  n #aliceblue;line:blue;line.dotted;text:blue\n}\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/deployment-diagram"
+  },
+  {
+    "prompt": "Deployment Diagram syntax and features",
+    "code": "@startuml\naction action {\n}\nartifact artifact {\n}\ncard card {\n}\ncloud cloud {\n}\ncomponent component {\n}\ndatabase database {\n}\nfile file {\n}\nfolder folder {\n}\nframe frame {\n}\nhexagon hexagon {\n}\nnode node {\n}\npackage package {\n}\nprocess process {\n}\nqueue queue {\n}\nrectangle rectangle {\n}\nstack stack {\n}\nstorage storage {\n}\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/deployment-diagram"
+  },
+  {
+    "prompt": "Deployment Diagram syntax and features",
+    "code": "@startuml\nartifact    artifactVeryLOOOOOOOOOOOOOOOOOOOg    as \"artifact\" {\nfile f1\n}\ncard        cardVeryLOOOOOOOOOOOOOOOOOOOg        as \"card\" {\nfile f2\n}\ncloud       cloudVeryLOOOOOOOOOOOOOOOOOOOg       as \"cloud\" {\nfile f3\n}\ncomponent   componentVeryLOOOOOOOOOOOOOOOOOOOg   as \"component\" {\nfile f4\n}\ndatabase    databaseVeryLOOOOOOOOOOOOOOOOOOOg    as \"database\" {\nfile f5\n}\nfile        fileVeryLOOOOOOOOOOOOOOOOOOOg        as \"file\" {\nfile f6\n}\nfolder      folderVeryLOOOOOOOOOOOOOOOOOOOg      as \"folder\" {\nfile f7\n}\nframe       frameVeryLOOOOOOOOOOOOOOOOOOOg       as \"frame\" {\nfile f8\n}\nhexagon     hexagonVeryLOOOOOOOOOOOOOOOOOOOg     as \"hexagon\" {\nfile f9\n}\nnode        nodeVeryLOOOOOOOOOOOOOOOOOOOg        as \"node\" {\nfile f10\n}\npackage     packageVeryLOOOOOOOOOOOOOOOOOOOg     as \"package\" {\nfile f11\n}\nqueue       queueVeryLOOOOOOOOOOOOOOOOOOOg       as \"queue\" {\nfile f12\n}\nrectangle   rectangleVeryLOOOOOOOOOOOOOOOOOOOg   as \"rectangle\" {\nfile f13\n}\nstack       stackVeryLOOOOOOOOOOOOOOOOOOOg       as \"stack\" {\nfile f14\n}\nstorage     storageVeryLOOOOOOOOOOOOOOOOOOOg     as \"storage\" {\nfile f15\n}\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/deployment-diagram"
+  },
+  {
+    "prompt": "Deployment Diagram syntax and features",
+    "code": "@startuml\nartifact Foo1 {\n  folder Foo2\n}\n\nfolder Foo3 {\n  artifact Foo4\n}\n\nframe Foo5 {\n  database Foo6\n}\n\ncloud vpc {\n  node ec2 {\n    stack stack\n  }\n}\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/deployment-diagram"
+  },
+  {
+    "prompt": "Deployment Diagram syntax and features",
+    "code": "@startuml\nnode Foo1 {\n cloud Foo2\n}\n\ncloud Foo3 {\n  frame Foo4\n}\n\ndatabase Foo5  {\n  storage Foo6\n}\n\nstorage Foo7 {\n  storage Foo8\n}\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/deployment-diagram"
+  },
+  {
+    "prompt": "Deployment Diagram syntax and features",
+    "code": "@startuml\naction action {\nartifact artifact {\ncard card {\ncloud cloud {\ncomponent component {\ndatabase database {\nfile file {\nfolder folder {\nframe frame {\nhexagon hexagon {\nnode node {\npackage package {\nprocess process {\nqueue queue {\nrectangle rectangle {\nstack stack {\nstorage storage {\n}\n}\n}\n}\n}\n}\n}\n}\n}\n}\n}\n}\n}\n}\n}\n}\n}\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/deployment-diagram"
+  },
+  {
+    "prompt": "Deployment Diagram syntax and features",
+    "code": "@startuml\nstorage storage {\nstack stack {\nrectangle rectangle {\nqueue queue {\nprocess process {\npackage package {\nnode node {\nhexagon hexagon {\nframe frame {\nfolder folder {\nfile file {\ndatabase database {\ncomponent component {\ncloud cloud {\ncard card {\nartifact artifact {\naction action {\n}\n}\n}\n}\n}\n}\n}\n}\n}\n}\n}\n}\n}\n}\n}\n}\n}\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/deployment-diagram"
+  },
+  {
+    "prompt": "Deployment Diagram syntax and features",
+    "code": "@startuml\nnode Node1 as n1\nnode \"Node 2\" as n2\nfile f1 as \"File 1\"\ncloud c1 as \"this\nis\na\ncloud\"\ncloud c2 [this\nis\nanother\ncloud]\n\nn1 -> n2\nn1 --> f1\nf1 -> c1\nc1 -> c2\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/deployment-diagram"
+  },
+  {
+    "prompt": "Deployment Diagram syntax and features",
+    "code": "@startuml\nactor        \"actor\"       as actorVeryLOOOOOOOOOOOOOOOOOOOg\nagent        \"agent\"       as agentVeryLOOOOOOOOOOOOOOOOOOOg\nartifact     \"artifact\"    as artifactVeryLOOOOOOOOOOOOOOOOOOOg\nboundary     \"boundary\"    as boundaryVeryLOOOOOOOOOOOOOOOOOOOg\ncard         \"card\"        as cardVeryLOOOOOOOOOOOOOOOOOOOg\ncloud        \"cloud\"       as cloudVeryLOOOOOOOOOOOOOOOOOOOg\ncollections  \"collections\" as collectionsVeryLOOOOOOOOOOOOOOOOOOOg\ncomponent    \"component\"   as componentVeryLOOOOOOOOOOOOOOOOOOOg\ncontrol      \"control\"     as controlVeryLOOOOOOOOOOOOOOOOOOOg\ndatabase     \"database\"    as databaseVeryLOOOOOOOOOOOOOOOOOOOg\nentity       \"entity\"      as entityVeryLOOOOOOOOOOOOOOOOOOOg\nfile         \"file\"        as fileVeryLOOOOOOOOOOOOOOOOOOOg\nfolder       \"folder\"      as folderVeryLOOOOOOOOOOOOOOOOOOOg\nframe        \"frame\"       as frameVeryLOOOOOOOOOOOOOOOOOOOg\nhexagon      \"hexagon\"     as hexagonVeryLOOOOOOOOOOOOOOOOOOOg\ninterface    \"interface\"   as interfaceVeryLOOOOOOOOOOOOOOOOOOOg\nlabel        \"label\"       as labelVeryLOOOOOOOOOOOOOOOOOOOg\nnode         \"node\"        as nodeVeryLOOOOOOOOOOOOOOOOOOOg\npackage      \"package\"     as packageVeryLOOOOOOOOOOOOOOOOOOOg\nperson       \"person\"      as personVeryLOOOOOOOOOOOOOOOOOOOg\nqueue        \"queue\"       as queueVeryLOOOOOOOOOOOOOOOOOOOg\nstack        \"stack\"       as stackVeryLOOOOOOOOOOOOOOOOOOOg\nrectangle    \"rectangle\"   as rectangleVeryLOOOOOOOOOOOOOOOOOOOg\nstorage      \"storage\"     as storageVeryLOOOOOOOOOOOOOOOOOOOg\nusecase      \"usecase\"     as usecaseVeryLOOOOOOOOOOOOOOOOOOOg\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/deployment-diagram"
+  },
+  {
+    "prompt": "Deployment Diagram syntax and features",
+    "code": "@startuml\nactor       actorVeryLOOOOOOOOOOOOOOOOOOOg       as \"actor\"\nagent       agentVeryLOOOOOOOOOOOOOOOOOOOg       as \"agent\"\nartifact    artifactVeryLOOOOOOOOOOOOOOOOOOOg    as \"artifact\"\nboundary    boundaryVeryLOOOOOOOOOOOOOOOOOOOg    as \"boundary\"\ncard        cardVeryLOOOOOOOOOOOOOOOOOOOg        as \"card\"\ncloud       cloudVeryLOOOOOOOOOOOOOOOOOOOg       as \"cloud\"\ncollections collectionsVeryLOOOOOOOOOOOOOOOOOOOg as \"collections\"\ncomponent   componentVeryLOOOOOOOOOOOOOOOOOOOg   as \"component\"\ncontrol     controlVeryLOOOOOOOOOOOOOOOOOOOg     as \"control\"\ndatabase    databaseVeryLOOOOOOOOOOOOOOOOOOOg    as \"database\"\nentity      entityVeryLOOOOOOOOOOOOOOOOOOOg      as \"entity\"\nfile        fileVeryLOOOOOOOOOOOOOOOOOOOg        as \"file\"\nfolder      folderVeryLOOOOOOOOOOOOOOOOOOOg      as \"folder\"\nframe       frameVeryLOOOOOOOOOOOOOOOOOOOg       as \"frame\"\nhexagon     hexagonVeryLOOOOOOOOOOOOOOOOOOOg     as \"hexagon\"\ninterface   interfaceVeryLOOOOOOOOOOOOOOOOOOOg   as \"interface\"\nlabel       labelVeryLOOOOOOOOOOOOOOOOOOOg       as \"label\"\nnode        nodeVeryLOOOOOOOOOOOOOOOOOOOg        as \"node\"\npackage     packageVeryLOOOOOOOOOOOOOOOOOOOg     as \"package\"\nperson      personVeryLOOOOOOOOOOOOOOOOOOOg      as \"person\"\nqueue       queueVeryLOOOOOOOOOOOOOOOOOOOg       as \"queue\"\nstack       stackVeryLOOOOOOOOOOOOOOOOOOOg       as \"stack\"\nrectangle   rectangleVeryLOOOOOOOOOOOOOOOOOOOg   as \"rectangle\"\nstorage     storageVeryLOOOOOOOOOOOOOOOOOOOg     as \"storage\"\nusecase     usecaseVeryLOOOOOOOOOOOOOOOOOOOg     as \"usecase\"\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/deployment-diagram"
+  },
+  {
+    "prompt": "Deployment Diagram syntax and features",
+    "code": "@startuml\nskinparam rectangle {\n    roundCorner<<Concept>> 25\n}\n\nrectangle \"Concept Model\" <<Concept>> {\nrectangle \"Example 1\" <<Concept>> as ex1\nrectangle \"Another rectangle\"\n}\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/deployment-diagram"
+  },
+  {
+    "prompt": "Deployment Diagram syntax and features",
+    "code": "@startuml\nskinparam roundCorner 15\nactor actor\nagent agent\nartifact artifact\nboundary boundary\ncard card\ncircle circle\ncloud cloud\ncollections collections\ncomponent component\ncontrol control\ndatabase database\nentity entity\nfile file\nfolder folder\nframe frame\nhexagon hexagon\ninterface interface\nlabel label\nnode node\npackage package\nperson person\nqueue queue\nrectangle rectangle\nstack stack\nstorage storage\nusecase usecase\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/deployment-diagram"
+  },
+  {
+    "prompt": "Deployment Diagram syntax and features",
+    "code": "@startuml\nleft to right direction\nskinparam nodesep 5\n\nf3  ~~  b3  : \"\"~~\"\"\\n//dotted//\nf2  ..  b2  : \"\"..\"\"\\n//dashed//\nf1  ==  b1  : \"\"==\"\"\\n//bold//\nf0  --  b0  : \"\"--\"\"\\n//plain//\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/deployment-diagram"
+  },
+  {
+    "prompt": "Deployment Diagram syntax and features",
+    "code": "@startuml\nleft to right direction\nskinparam nodesep 5\n\nf13 --0   b13 : \"\"--0\"\"\nf12 --@   b12 : \"\"--@\"\"\nf11 --:|> b11 : \"\"--:|>\"\"\nf10 --||> b10 : \"\"--||>\"\"\nf9  --|>  b9  : \"\"--|>\"\"\nf8  --^   b8  : \"\"--^ \"\"\nf7  --\\\\  b7  : \"\"--\\\\\\\\\"\"\nf6  --#   b6  : \"\"--# \"\"\nf5  --+   b5  : \"\"--+ \"\"\nf4  --o   b4  : \"\"--o \"\"\nf3  --*   b3  : \"\"--* \"\"\nf2  -->>  b2  : \"\"-->>\"\"\nf1  -->   b1  : \"\"--> \"\"\nf0  --    b0  : \"\"--  \"\"\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/deployment-diagram"
+  },
+  {
+    "prompt": "Deployment Diagram syntax and features",
+    "code": "@startuml\nleft to right direction\nskinparam nodesep 5\n\nf10 0--0 b10 : \"\" 0--0 \"\"\nf9 )--(  b9  : \"\" )--( \"\"\nf8 0)--(0 b8 : \"\" 0)--(0\"\"\nf7 0)--  b7  : \"\" 0)-- \"\"\nf6 -0)-  b6  : \"\" -0)- \"\"\nf5 -(0)- b5  : \"\" -(0)-\"\"\nf4 -(0-  b4  : \"\" -(0- \"\"\nf3 --(0  b3  : \"\" --(0 \"\"\nf2 --(   b2  : \"\" --(  \"\"\nf1 --0   b1  : \"\" --0  \"\"\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/deployment-diagram"
+  },
+  {
+    "prompt": "Deployment Diagram syntax and features",
+    "code": "@startuml\naction action           #aliceblue;line:blue;line.dotted;text:blue\nactor actor             #aliceblue;line:blue;line.dotted;text:blue\nactor/ \"actor/\"         #aliceblue;line:blue;line.dotted;text:blue\nagent agent             #aliceblue;line:blue;line.dotted;text:blue\nartifact artifact       #aliceblue;line:blue;line.dotted;text:blue\nboundary boundary       #aliceblue;line:blue;line.dotted;text:blue\ncard card               #aliceblue;line:blue;line.dotted;text:blue\ncircle circle           #aliceblue;line:blue;line.dotted;text:blue\ncloud cloud             #aliceblue;line:blue;line.dotted;text:blue\ncollections collections #aliceblue;line:blue;line.dotted;text:blue\ncomponent component     #aliceblue;line:blue;line.dotted;text:blue\ncontrol control         #aliceblue;line:blue;line.dotted;text:blue\ndatabase database       #aliceblue;line:blue;line.dotted;text:blue\nentity entity           #aliceblue;line:blue;line.dotted;text:blue\nfile file               #aliceblue;line:blue;line.dotted;text:blue\nfolder folder           #aliceblue;line:blue;line.dotted;text:blue\nframe frame             #aliceblue;line:blue;line.dotted;text:blue\nhexagon hexagon         #aliceblue;line:blue;line.dotted;text:blue\ninterface interface     #aliceblue;line:blue;line.dotted;text:blue\nlabel label             #aliceblue;line:blue;line.dotted;text:blue\nnode node               #aliceblue;line:blue;line.dotted;text:blue\npackage package         #aliceblue;line:blue;line.dotted;text:blue\nperson person           #aliceblue;line:blue;line.dotted;text:blue\nprocess process         #aliceblue;line:blue;line.dotted;text:blue\nqueue queue             #aliceblue;line:blue;line.dotted;text:blue\nrectangle rectangle     #aliceblue;line:blue;line.dotted;text:blue\nstack stack             #aliceblue;line:blue;line.dotted;text:blue\nstorage storage         #aliceblue;line:blue;line.dotted;text:blue\nusecase usecase         #aliceblue;line:blue;line.dotted;text:blue\nusecase/ \"usecase/\"     #aliceblue;line:blue;line.dotted;text:blue\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/deployment-diagram"
+  },
+  {
+    "prompt": "Deployment Diagram syntax and features",
+    "code": "@startuml\naction action #aliceblue;line:blue;line.dotted;text:blue {\n}\nartifact artifact #aliceblue;line:blue;line.dotted;text:blue {\n}\ncard card #aliceblue;line:blue;line.dotted;text:blue {\n}\ncloud cloud #aliceblue;line:blue;line.dotted;text:blue {\n}\ncomponent component #aliceblue;line:blue;line.dotted;text:blue {\n}\ndatabase database #aliceblue;line:blue;line.dotted;text:blue {\n}\nfile file #aliceblue;line:blue;line.dotted;text:blue {\n}\nfolder folder #aliceblue;line:blue;line.dotted;text:blue {\n}\nframe frame #aliceblue;line:blue;line.dotted;text:blue {\n}\nhexagon hexagon #aliceblue;line:blue;line.dotted;text:blue {\n}\nnode node #aliceblue;line:blue;line.dotted;text:blue {\n}\npackage package #aliceblue;line:blue;line.dotted;text:blue {\n}\nprocess process #aliceblue;line:blue;line.dotted;text:blue {\n}\nqueue queue #aliceblue;line:blue;line.dotted;text:blue {\n}\nrectangle rectangle #aliceblue;line:blue;line.dotted;text:blue {\n}\nstack stack #aliceblue;line:blue;line.dotted;text:blue {\n}\nstorage storage #aliceblue;line:blue;line.dotted;text:blue {\n}\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/deployment-diagram"
+  },
+  {
+    "prompt": "Deployment Diagram syntax and features",
+    "code": "@startuml\naction      actionVeryLOOOOOOOOOOOOOOOOOOOg      as \"action\" #aliceblue;line:blue;line.dotted;text:blue {\nfile f1\n}\nartifact    artifactVeryLOOOOOOOOOOOOOOOOOOOg    as \"artifact\" #aliceblue;line:blue;line.dotted;text:blue {\nfile f1\n}\ncard        cardVeryLOOOOOOOOOOOOOOOOOOOg        as \"card\" #aliceblue;line:blue;line.dotted;text:blue {\nfile f2\n}\ncloud       cloudVeryLOOOOOOOOOOOOOOOOOOOg       as \"cloud\" #aliceblue;line:blue;line.dotted;text:blue {\nfile f3\n}\ncomponent   componentVeryLOOOOOOOOOOOOOOOOOOOg   as \"component\" #aliceblue;line:blue;line.dotted;text:blue {\nfile f4\n}\ndatabase    databaseVeryLOOOOOOOOOOOOOOOOOOOg    as \"database\" #aliceblue;line:blue;line.dotted;text:blue {\nfile f5\n}\nfile        fileVeryLOOOOOOOOOOOOOOOOOOOg        as \"file\" #aliceblue;line:blue;line.dotted;text:blue {\nfile f6\n}\nfolder      folderVeryLOOOOOOOOOOOOOOOOOOOg      as \"folder\" #aliceblue;line:blue;line.dotted;text:blue {\nfile f7\n}\nframe       frameVeryLOOOOOOOOOOOOOOOOOOOg       as \"frame\" #aliceblue;line:blue;line.dotted;text:blue {\nfile f8\n}\nhexagon     hexagonVeryLOOOOOOOOOOOOOOOOOOOg     as \"hexagon\" #aliceblue;line:blue;line.dotted;text:blue {\nfile f9\n}\nnode        nodeVeryLOOOOOOOOOOOOOOOOOOOg        as \"node\" #aliceblue;line:blue;line.dotted;text:blue {\nfile f10\n}\npackage     packageVeryLOOOOOOOOOOOOOOOOOOOg     as \"package\" #aliceblue;line:blue;line.dotted;text:blue {\nfile f11\n}\nprocess     processVeryLOOOOOOOOOOOOOOOOOOOg     as \"process\" #aliceblue;line:blue;line.dotted;text:blue {\nfile f11\n}\nqueue       queueVeryLOOOOOOOOOOOOOOOOOOOg       as \"queue\" #aliceblue;line:blue;line.dotted;text:blue {\nfile f12\n}\nrectangle   rectangleVeryLOOOOOOOOOOOOOOOOOOOg   as \"rectangle\" #aliceblue;line:blue;line.dotted;text:blue {\nfile f13\n}\nstack       stackVeryLOOOOOOOOOOOOOOOOOOOg       as \"stack\" #aliceblue;line:blue;line.dotted;text:blue {\nfile f14\n}\nstorage     storageVeryLOOOOOOOOOOOOOOOOOOOg     as \"storage\" #aliceblue;line:blue;line.dotted;text:blue {\nfile f15\n}\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/deployment-diagram"
+  },
+  {
+    "prompt": "Deployment Diagram syntax and features",
+    "code": "@startuml\n<style>\ncomponentDiagram {\n  BackGroundColor palegreen\n  LineThickness 1\n  LineColor red\n}\ndocument {\n  BackGroundColor white\n}\n</style>\nactor actor\nactor/ \"actor/\"\nagent agent\nartifact artifact\nboundary boundary\ncard card\ncircle circle\ncloud cloud\ncollections collections\ncomponent component\ncontrol control\ndatabase database\nentity entity\nfile file\nfolder folder\nframe frame\nhexagon hexagon\ninterface interface\nlabel label\nnode node\npackage package\nperson person\nqueue queue\nrectangle rectangle\nstack stack\nstorage storage\nusecase usecase\nusecase/ \"usecase/\"\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/deployment-diagram"
+  },
+  {
+    "prompt": "Deployment Diagram syntax and features",
+    "code": "@startuml\n<style>\nactor {\n  BackGroundColor #f80c12\n  LineThickness 1\n  LineColor black\n}\nagent {\n  BackGroundColor #f80c12\n  LineThickness 1\n  LineColor black\n}\nartifact {\n  BackGroundColor #ee1100\n  LineThickness 1\n  LineColor black\n}\nboundary {\n  BackGroundColor #ee1100\n  LineThickness 1\n  LineColor black\n}\ncard {\n  BackGroundColor #ff3311\n  LineThickness 1\n  LineColor black\n}\ncircle {\n  BackGroundColor #ff3311\n  LineThickness 1\n  LineColor black\n}\ncloud {\n  BackGroundColor #ff4422\n  LineThickness 1\n  LineColor black\n}\ncollections {\n  BackGroundColor #ff4422\n  LineThickness 1\n  LineColor black\n}\ncomponent {\n  BackGroundColor #ff6644\n  LineThickness 1\n  LineColor black\n}\ncontrol {\n  BackGroundColor #ff6644\n  LineThickness 1\n  LineColor black\n}\ndatabase {\n  BackGroundColor #ff9933\n  LineThickness 1\n  LineColor black\n}\nentity {\n  BackGroundColor #feae2d\n  LineThickness 1\n  LineColor black\n}\nfile {\n  BackGroundColor #feae2d\n  LineThickness 1\n  LineColor black\n}\nfolder {\n  BackGroundColor #ccbb33\n  LineThickness 1\n  LineColor black\n}\nframe {\n  BackGroundColor #d0c310\n  LineThickness 1\n  LineColor black\n}\nhexagon {\n  BackGroundColor #aacc22\n  LineThickness 1\n  LineColor black\n}\ninterface {\n  BackGroundColor #69d025\n  LineThickness 1\n  LineColor black\n}\nlabel {\n  BackGroundColor black\n  LineThickness 1\n  LineColor black\n}\nnode {\n  BackGroundColor #22ccaa\n  LineThickness 1\n  LineColor black\n}\npackage {\n  BackGroundColor #12bdb9\n  LineThickness 1\n  LineColor black\n}\nperson {\n  BackGroundColor #11aabb\n  LineThickness 1\n  LineColor black\n}\nqueue {\n  BackGroundColor #11aabb\n  LineThickness 1\n  LineColor black\n}\nrectangle {\n  BackGroundColor #4444dd\n  LineThickness 1\n  LineColor black\n}\nstack {\n  BackGroundColor #3311bb\n  LineThickness 1\n  LineColor black\n}\nstorage {\n  BackGroundColor #3b0cbd\n  LineThickness 1\n  LineColor black\n}\nusecase {\n  BackGroundColor #442299\n  LineThickness 1\n  LineColor black\n}\n</style>\nactor actor\nactor/ \"actor/\"\nagent agent\nartifact artifact\nboundary boundary\ncard card\ncircle circle\ncloud cloud\ncollections collections\ncomponent component\ncontrol control\ndatabase database\nentity entity\nfile file\nfolder folder\nframe frame\nhexagon hexagon\ninterface interface\nlabel label\nnode node\npackage package\nperson person\nqueue queue\nrectangle rectangle\nstack stack\nstorage storage\nusecase usecase\nusecase/ \"usecase/\"\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/deployment-diagram"
+  },
+  {
+    "prompt": "Deployment Diagram syntax and features",
+    "code": "@startuml\n<style>\ncomponentDiagram {\n  BackGroundColor palegreen\n  LineThickness 2\n  LineColor red\n}\n</style>\nartifact artifact {\n}\ncard card {\n}\ncloud cloud {\n}\ncomponent component {\n}\ndatabase database {\n}\nfile file {\n}\nfolder folder {\n}\nframe frame {\n}\nhexagon hexagon {\n}\nnode node {\n}\npackage package {\n}\nqueue queue {\n}\nrectangle rectangle {\n}\nstack stack {\n}\nstorage storage {\n}\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/deployment-diagram"
+  },
+  {
+    "prompt": "Deployment Diagram syntax and features",
+    "code": "@startuml\n<style>\nartifact {\n  BackGroundColor #ee1100\n  LineThickness 1\n  LineColor black\n}\ncard {\n  BackGroundColor #ff3311\n  LineThickness 1\n  LineColor black\n}\ncloud {\n  BackGroundColor #ff4422\n  LineThickness 1\n  LineColor black\n}\ncomponent {\n  BackGroundColor #ff6644\n  LineThickness 1\n  LineColor black\n}\ndatabase {\n  BackGroundColor #ff9933\n  LineThickness 1\n  LineColor black\n}\nfile {\n  BackGroundColor #feae2d\n  LineThickness 1\n  LineColor black\n}\nfolder {\n  BackGroundColor #ccbb33\n  LineThickness 1\n  LineColor black\n}\nframe {\n  BackGroundColor #d0c310\n  LineThickness 1\n  LineColor black\n}\nhexagon {\n  BackGroundColor #aacc22\n  LineThickness 1\n  LineColor black\n}\nnode {\n  BackGroundColor #22ccaa\n  LineThickness 1\n  LineColor black\n}\npackage {\n  BackGroundColor #12bdb9\n  LineThickness 1\n  LineColor black\n}\nqueue {\n  BackGroundColor #11aabb\n  LineThickness 1\n  LineColor black\n}\nrectangle {\n  BackGroundColor #4444dd\n  LineThickness 1\n  LineColor black\n}\nstack {\n  BackGroundColor #3311bb\n  LineThickness 1\n  LineColor black\n}\nstorage {\n  BackGroundColor #3b0cbd\n  LineThickness 1\n  LineColor black\n}\n\n</style>\nartifact artifact {\n}\ncard card {\n}\ncloud cloud {\n}\ncomponent component {\n}\ndatabase database {\n}\nfile file {\n}\nfolder folder {\n}\nframe frame {\n}\nhexagon hexagon {\n}\nnode node {\n}\npackage package {\n}\nqueue queue {\n}\nrectangle rectangle {\n}\nstack stack {\n}\nstorage storage {\n}\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/deployment-diagram"
+  },
+  {
+    "prompt": "Deployment Diagram syntax and features",
+    "code": "@startuml\n<style>\ncomponentDiagram {\n  BackGroundColor palegreen\n  LineThickness 1\n  LineColor red\n}\ndocument {\n  BackGroundColor white\n}\n</style>\nartifact e1 as \"artifact\" {\nfile f1\n}\ncard e2 as \"card\" {\nfile f2\n}\ncloud e3 as \"cloud\" {\nfile f3\n}\ncomponent e4 as \"component\" {\nfile f4\n}\ndatabase e5 as \"database\" {\nfile f5\n}\nfile e6 as \"file\" {\nfile f6\n}\nfolder e7 as \"folder\" {\nfile f7\n}\nframe e8 as \"frame\" {\nfile f8\n}\nhexagon e9 as \"hexagon\" {\nfile f9\n}\nnode e10 as \"node\" {\nfile f10\n}\npackage e11 as \"package\" {\nfile f11\n}\nqueue e12 as \"queue\" {\nfile f12\n}\nrectangle e13 as \"rectangle\" {\nfile f13\n}\nstack e14 as \"stack\" {\nfile f14\n}\nstorage e15 as \"storage\" {\nfile f15\n}\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/deployment-diagram"
+  },
+  {
+    "prompt": "Deployment Diagram syntax and features",
+    "code": "@startuml\n<style>\nartifact {\n  BackGroundColor #ee1100\n  LineThickness 1\n  LineColor black\n}\ncard {\n  BackGroundColor #ff3311\n  LineThickness 1\n  LineColor black\n}\ncloud {\n  BackGroundColor #ff4422\n  LineThickness 1\n  LineColor black\n}\ncomponent {\n  BackGroundColor #ff6644\n  LineThickness 1\n  LineColor black\n}\ndatabase {\n  BackGroundColor #ff9933\n  LineThickness 1\n  LineColor black\n}\nfile {\n  BackGroundColor #feae2d\n  LineThickness 1\n  LineColor black\n}\nfolder {\n  BackGroundColor #ccbb33\n  LineThickness 1\n  LineColor black\n}\nframe {\n  BackGroundColor #d0c310\n  LineThickness 1\n  LineColor black\n}\nhexagon {\n  BackGroundColor #aacc22\n  LineThickness 1\n  LineColor black\n}\nnode {\n  BackGroundColor #22ccaa\n  LineThickness 1\n  LineColor black\n}\npackage {\n  BackGroundColor #12bdb9\n  LineThickness 1\n  LineColor black\n}\nqueue {\n  BackGroundColor #11aabb\n  LineThickness 1\n  LineColor black\n}\nrectangle {\n  BackGroundColor #4444dd\n  LineThickness 1\n  LineColor black\n}\nstack {\n  BackGroundColor #3311bb\n  LineThickness 1\n  LineColor black\n}\nstorage {\n  BackGroundColor #3b0cbd\n  LineThickness 1\n  LineColor black\n}\n</style>\nartifact e1 as \"artifact\" {\nfile f1\n}\ncard e2 as \"card\" {\nfile f2\n}\ncloud e3 as \"cloud\" {\nfile f3\n}\ncomponent e4 as \"component\" {\nfile f4\n}\ndatabase e5 as \"database\" {\nfile f5\n}\nfile e6 as \"file\" {\nfile f6\n}\nfolder e7 as \"folder\" {\nfile f7\n}\nframe e8 as \"frame\" {\nfile f8\n}\nhexagon e9 as \"hexagon\" {\nfile f9\n}\nnode e10 as \"node\" {\nfile f10\n}\npackage e11 as \"package\" {\nfile f11\n}\nqueue e12 as \"queue\" {\nfile f12\n}\nrectangle e13 as \"rectangle\" {\nfile f13\n}\nstack e14 as \"stack\" {\nfile f14\n}\nstorage e15 as \"storage\" {\nfile f15\n}\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/deployment-diagram"
+  },
+  {
+    "prompt": "Deployment Diagram syntax and features",
+    "code": "@startuml\n<style>\n.stereo {\n  BackgroundColor palegreen\n}\n</style>\nactor actor << stereo >>\nactor/ \"actor/\" << stereo >>\nagent agent << stereo >>\nartifact artifact << stereo >>\nboundary boundary << stereo >>\ncard card << stereo >>\ncircle circle << stereo >>\ncloud cloud << stereo >>\ncollections collections << stereo >>\ncomponent component << stereo >>\ncontrol control << stereo >>\ndatabase database << stereo >>\nentity entity << stereo >>\nfile file << stereo >>\nfolder folder << stereo >>\nframe frame << stereo >>\nhexagon hexagon << stereo >>\ninterface interface << stereo >>\nlabel label << stereo >>\nnode node << stereo >>\npackage package << stereo >>\nperson person << stereo >>\nqueue queue << stereo >>\nrectangle rectangle << stereo >>\nstack stack << stereo >>\nstorage storage << stereo >>\nusecase usecase << stereo >>\nusecase/ \"usecase/\" << stereo >>\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/deployment-diagram"
+  },
+  {
+    "prompt": "Deployment Diagram syntax and features",
+    "code": "@startuml\nallowmixing\n\ncomponent Component\nactor     Actor\nusecase   Usecase\n()        Interface\nnode      Node\ncloud     Cloud\n\njson JSON {\n   \"fruit\":\"Apple\",\n   \"size\":\"Large\",\n   \"color\": [\"Red\", \"Green\"]\n}\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/deployment-diagram"
+  },
+  {
+    "prompt": "Deployment Diagram syntax and features",
+    "code": "@startuml\n\nallowmixing\n\nskinparam nodesep 10\nabstract        abstract\nabstract class  \"abstract class\"\nannotation      annotation\ncircle          circle\n()              circle_short_form\nclass           class\ndiamond         diamond\n<>              diamond_short_form\nentity          entity\nenum            enum\nexception       exception\ninterface       interface\nmetaclass       metaclass\nprotocol        protocol\nstereotype      stereotype\nstruct          struct\nobject          object\nmap map {\n key => value\n}\njson JSON {\n   \"fruit\":\"Apple\",\n   \"size\":\"Large\",\n   \"color\": [\"Red\", \"Green\"]\n}\naction action\nactor actor\nactor/ \"actor/\"\nagent agent\nartifact artifact\nboundary boundary\ncard card\ncircle circle\ncloud cloud\ncollections collections\ncomponent component\ncontrol control\ndatabase database\nentity entity\nfile file\nfolder folder\nframe frame\nhexagon hexagon\ninterface interface\nlabel label\nnode node\npackage package\nperson person\nprocess process\nqueue queue\nrectangle rectangle\nstack stack\nstorage storage\nusecase usecase\nusecase/ \"usecase/\"\nstate state\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/deployment-diagram"
+  },
+  {
+    "prompt": "Deployment Diagram syntax and features",
+    "code": "@startuml\n[c]\nnode node {\n  port p1\n  port p2\n  port p3\n  file f1\n}\n\nc --> p1\nc --> p2\nc --> p3\np1 --> f1\np2 --> f1\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/deployment-diagram"
+  },
+  {
+    "prompt": "Deployment Diagram syntax and features",
+    "code": "@startuml\n[c]\nnode node {\n  portin p1\n  portin p2\n  portin p3\n  file f1\n}\n\nc --> p1\nc --> p2\nc --> p3\np1 --> f1\np2 --> f1\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/deployment-diagram"
+  },
+  {
+    "prompt": "Deployment Diagram syntax and features",
+    "code": "@startuml\nnode node {\n  portout p1\n  portout p2\n  portout p3\n  file f1\n}\n[o]\np1 --> o\np2 --> o\np3 --> o\nf1 --> p1\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/deployment-diagram"
+  },
+  {
+    "prompt": "Deployment Diagram syntax and features",
+    "code": "@startuml\n[i]\nnode node {\n  portin p1\n  portin p2\n  portin p3\n  portout po1\n  portout po2\n  portout po3\n  file f1\n}\n[o]\n\ni --> p1\ni --> p2\ni --> p3\np1 --> f1\np2 --> f1\npo1 --> o\npo2 --> o\npo3 --> o\nf1 --> po1\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/deployment-diagram"
+  },
+  {
+    "prompt": "Deployment Diagram syntax and features",
+    "code": "@startuml\ncard a\ncard b\npackage A {\n  card a1\n  card a2\n  card a3\n  card a4\n  card a5\n  package sub_a {\n   card sa1\n   card sa2\n   card sa3\n  }\n}\n  \npackage B {\n  card b1\n  card b2\n  card b3\n  card b4\n  card b5\n  package sub_b {\n   card sb1\n   card sb2\n   card sb3\n  }\n}\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/deployment-diagram"
+  },
+  {
+    "prompt": "Deployment Diagram syntax and features",
+    "code": "@startuml\n!pragma layout smetana\ncard a\ncard b\npackage A {\n  card a1\n  card a2\n  card a3\n  card a4\n  card a5\n  package sub_a {\n   card sa1\n   card sa2\n   card sa3\n  }\n}\n  \npackage B {\n  card b1\n  card b2\n  card b3\n  card b4\n  card b5\n  package sub_b {\n   card sb1\n   card sb2\n   card sb3\n  }\n}\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/deployment-diagram"
+  },
+  {
+    "prompt": "Deployment Diagram syntax and features",
+    "code": "@startuml\nleft to right direction\ncard a\ncard b\npackage A {\n  card a1\n  card a2\n  card a3\n  card a4\n  card a5\n  package sub_a {\n   card sa1\n   card sa2\n   card sa3\n  }\n}\n  \npackage B {\n  card b1\n  card b2\n  card b3\n  card b4\n  card b5\n  package sub_b {\n   card sb1\n   card sb2\n   card sb3\n  }\n}\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/deployment-diagram"
+  },
+  {
+    "prompt": "Deployment Diagram syntax and features",
+    "code": "@startuml\n!pragma layout smetana\nleft to right direction\ncard a\ncard b\npackage A {\n  card a1\n  card a2\n  card a3\n  card a4\n  card a5\n  package sub_a {\n   card sa1\n   card sa2\n   card sa3\n  }\n}\n  \npackage B {\n  card b1\n  card b2\n  card b3\n  card b4\n  card b5\n  package sub_b {\n   card sb1\n   card sb2\n   card sb3\n  }\n}\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/deployment-diagram"
+  },
+  {
+    "prompt": "Ãtat syntaxe de diagramme et caractÃ©ristiques",
+    "code": "@startuml\n\n[*] --> State1\nState1 --> [*]\nState1 : this is a string\nState1 : this is another string\n\nState1 -> State2\nState2 --> [*]\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/state-diagram"
+  },
+  {
+    "prompt": "Ãtat syntaxe de diagramme et caractÃ©ristiques",
+    "code": "@startuml\nhide empty description\n[*] --> State1\nState1 --> [*]\nState1 : this is a string\nState1 : this is another string\n\nState1 -> State2\nState2 --> [*]\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/state-diagram"
+  },
+  {
+    "prompt": "Ãtat syntaxe de diagramme et caractÃ©ristiques",
+    "code": "@startuml\nscale 350 width\n[*] --> NotShooting\n\nstate NotShooting {\n  [*] --> Idle\n  Idle --> Configuring : EvConfig\n  Configuring --> Idle : EvConfig\n}\n\nstate Configuring {\n  [*] --> NewValueSelection\n  NewValueSelection --> NewValuePreview : EvNewValue\n  NewValuePreview --> NewValueSelection : EvNewValueRejected\n  NewValuePreview --> NewValueSelection : EvNewValueSaved\n\n  state NewValuePreview {\n     State1 -> State2\n  }\n\n}\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/state-diagram"
+  },
+  {
+    "prompt": "Ãtat syntaxe de diagramme et caractÃ©ristiques",
+    "code": "@startuml\nstate A {\n  state X {\n  }\n  state Y {\n  }\n}\n \nstate B {\n  state Z {\n  }\n}\n\nX --> Z\nZ --> Y\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/state-diagram"
+  },
+  {
+    "prompt": "Ãtat syntaxe de diagramme et caractÃ©ristiques",
+    "code": "@startuml\nscale 600 width\n\n[*] -> State1\nState1 --> State2 : Succeeded\nState1 --> [*] : Aborted\nState2 --> State3 : Succeeded\nState2 --> [*] : Aborted\nstate State3 {\n  state \"Accumulate Enough Data\\nLong State Name\" as long1\n  long1 : Just a test\n  [*] --> long1\n  long1 --> long1 : New Data\n  long1 --> ProcessData : Enough Data\n}\nState3 --> State3 : Failed\nState3 --> [*] : Succeeded / Save Result\nState3 --> [*] : Aborted\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/state-diagram"
+  },
+  {
+    "prompt": "Ãtat syntaxe de diagramme et caractÃ©ristiques",
+    "code": "@startuml\n[*] -> State1\nState1 --> State2 : Succeeded\nState1 --> [*] : Aborted\nState2 --> State3 : Succeeded\nState2 --> [*] : Aborted\nstate State3 {\n  state \"Accumulate Enough Data\" as long1\n  long1 : Just a test\n  [*] --> long1\n  long1 --> long1 : New Data\n  long1 --> ProcessData : Enough Data\n  State2 --> [H]: Resume\n}\nState3 --> State2 : Pause\nState2 --> State3[H*]: DeepResume\nState3 --> State3 : Failed\nState3 --> [*] : Succeeded / Save Result\nState3 --> [*] : Aborted\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/state-diagram"
+  },
+  {
+    "prompt": "Ãtat syntaxe de diagramme et caractÃ©ristiques",
+    "code": "@startuml\n\nstate fork_state <<fork>>\n[*] --> fork_state\nfork_state --> State2\nfork_state --> State3\n\nstate join_state <<join>>\nState2 --> join_state\nState3 --> join_state\njoin_state --> State4\nState4 --> [*]\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/state-diagram"
+  },
+  {
+    "prompt": "Ãtat syntaxe de diagramme et caractÃ©ristiques",
+    "code": "@startuml\n[*] --> Active\n\nstate Active {\n  [*] -> NumLockOff\n  NumLockOff --> NumLockOn : EvNumLockPressed\n  NumLockOn --> NumLockOff : EvNumLockPressed\n  --\n  [*] -> CapsLockOff\n  CapsLockOff --> CapsLockOn : EvCapsLockPressed\n  CapsLockOn --> CapsLockOff : EvCapsLockPressed\n  --\n  [*] -> ScrollLockOff\n  ScrollLockOff --> ScrollLockOn : EvCapsLockPressed\n  ScrollLockOn --> ScrollLockOff : EvCapsLockPressed\n}\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/state-diagram"
+  },
+  {
+    "prompt": "Ãtat syntaxe de diagramme et caractÃ©ristiques",
+    "code": "@startuml\n[*] --> Active\n\nstate Active {\n  [*] -> NumLockOff\n  NumLockOff --> NumLockOn : EvNumLockPressed\n  NumLockOn --> NumLockOff : EvNumLockPressed\n  ||\n  [*] -> CapsLockOff\n  CapsLockOff --> CapsLockOn : EvCapsLockPressed\n  CapsLockOn --> CapsLockOff : EvCapsLockPressed\n  ||\n  [*] -> ScrollLockOff\n  ScrollLockOff --> ScrollLockOn : EvCapsLockPressed\n  ScrollLockOn --> ScrollLockOff : EvCapsLockPressed\n}\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/state-diagram"
+  },
+  {
+    "prompt": "Ãtat syntaxe de diagramme et caractÃ©ristiques",
+    "code": "@startuml\nstate \"Req(Id)\" as ReqId <<sdlreceive>>\nstate \"Minor(Id)\" as MinorId\nstate \"Major(Id)\" as MajorId\n \nstate c <<choice>>\n \nIdle --> ReqId\nReqId --> c\nc --> MinorId : [Id <= 10]\nc --> MajorId : [Id > 10]\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/state-diagram"
+  },
+  {
+    "prompt": "Ãtat syntaxe de diagramme et caractÃ©ristiques",
+    "code": "@startuml\nstate choice1 <<choice>>\nstate fork1   <<fork>>\nstate join2   <<join>>\nstate end3    <<end>>\n\n[*]     --> choice1 : de \"\"start\"\"\\nÃ  \"\"choice\"\"\nchoice1 --> fork1   : de \"\"choice\"\"\\nÃ  \"\"fork\"\"\nchoice1 --> join2   : de \"\"choice\"\"\\nÃ  \"\"join\"\"\nchoice1 --> end3    : de \"\"choice\"\"\\nÃ  \"\"end\"\"\n\nfork1   ---> State1 : de \"\"fork\"\"\\nÃ  \"\"state\"\"\nfork1   --> State2  : de \"\"fork\"\"\\nÃ  \"\"state\"\"\n\nState2  --> join2   : de \"\"state\"\"\\nÃ  \"\"join\"\"\nState1  --> [*]     : de \"\"state\"\"\\nÃ  \"\"end\"\"\n\njoin2   --> [*]     : de \"\"join\"\"\\nÃ  \"\"end\"\"\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/state-diagram"
+  },
+  {
+    "prompt": "Ãtat syntaxe de diagramme et caractÃ©ristiques",
+    "code": "@startuml\nstate Somp {\n  state entry1 <<entryPoint>>\n  state entry2 <<entryPoint>>\n  state sin\n  entry1 --> sin\n  entry2 -> sin\n  sin -> sin2\n  sin2 --> exitA <<exitPoint>>\n}\n\n[*] --> entry1\nexitA --> Foo\nFoo1 -> entry2\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/state-diagram"
+  },
+  {
+    "prompt": "Ãtat syntaxe de diagramme et caractÃ©ristiques",
+    "code": "@startuml\nstate Somp {\n  state entry1 <<inputPin>>\n  state entry2 <<inputPin>>\n  state sin\n  entry1 --> sin\n  entry2 -> sin\n  sin -> sin2\n  sin2 --> exitA <<outputPin>>\n}\n\n[*] --> entry1\nexitA --> Foo\nFoo1 -> entry2\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/state-diagram"
+  },
+  {
+    "prompt": "Ãtat syntaxe de diagramme et caractÃ©ristiques",
+    "code": "@startuml\nstate Somp {\n  state entry1 <<expansionInput>>\n  state entry2 <<expansionInput>>\n  state sin\n  entry1 --> sin\n  entry2 -> sin\n  sin -> sin2\n  sin2 --> exitA <<expansionOutput>>\n}\n\n[*] --> entry1\nexitA --> Foo\nFoo1 -> entry2\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/state-diagram"
+  },
+  {
+    "prompt": "Ãtat syntaxe de diagramme et caractÃ©ristiques",
+    "code": "@startuml\n\n[*] -up-> First\nFirst -right-> Second\nSecond --> Third\nThird -left-> Last\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/state-diagram"
+  },
+  {
+    "prompt": "Ãtat syntaxe de diagramme et caractÃ©ristiques",
+    "code": "@startuml\nState S1\nState S2\nS1 -[#DD00AA]-> S2\nS1 -left[#yellow]-> S3\nS1 -up[#red,dashed]-> S4\nS1 -right[dotted,#blue]-> S5\n\nX1 -[dashed]-> X2\nZ1 -[dotted]-> Z2\nY1 -[#blue,bold]-> Y2\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/state-diagram"
+  },
+  {
+    "prompt": "Ãtat syntaxe de diagramme et caractÃ©ristiques",
+    "code": "@startuml\n\n[*] --> Active\nActive --> Inactive\n\nnote left of Active : this is a short\\nnote\n\nnote right of Inactive\n  A note can also\n  be defined on\n  several lines\nend note\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/state-diagram"
+  },
+  {
+    "prompt": "Ãtat syntaxe de diagramme et caractÃ©ristiques",
+    "code": "@startuml\n\nstate foo\nnote \"This is a floating note\" as N1\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/state-diagram"
+  },
+  {
+    "prompt": "Ãtat syntaxe de diagramme et caractÃ©ristiques",
+    "code": "@startuml\n[*] -> State1\n\nState1 --> State2\nnote on link \n  this is a state-transition note \nend note\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/state-diagram"
+  },
+  {
+    "prompt": "Ãtat syntaxe de diagramme et caractÃ©ristiques",
+    "code": "@startuml\n\n[*] --> NotShooting\n\nstate \"Not Shooting State\" as NotShooting {\n  state \"Idle mode\" as Idle\n  state \"Configuring mode\" as Configuring\n  [*] --> Idle\n  Idle --> Configuring : EvConfig\n  Configuring --> Idle : EvConfig\n}\n\nnote right of NotShooting : This is a note on a composite state\n\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/state-diagram"
+  },
+  {
+    "prompt": "Ãtat syntaxe de diagramme et caractÃ©ristiques",
+    "code": "@startuml\nstate CurrentSite #pink {\n    state HardwareSetup #lightblue {\n       state Site #brown\n        Site -[hidden]-> Controller\n        Controller -[hidden]-> Devices\n    }\n    state PresentationSetup{\n        Groups -[hidden]-> PlansAndGraphics\n    }\n    state Trends #FFFF77\n    state Schedule #magenta\n    state AlarmSupression\n}\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/state-diagram"
+  },
+  {
+    "prompt": "Ãtat syntaxe de diagramme et caractÃ©ristiques",
+    "code": "@startuml\nskinparam backgroundColor LightYellow\nskinparam state {\n  StartColor MediumBlue\n  EndColor Red\n  BackgroundColor Peru\n  BackgroundColor<<Warning>> Olive\n  BorderColor Gray\n  FontName Impact\n}\n\n[*] --> NotShooting\n\nstate \"Not Shooting State\" as NotShooting {\n  state \"Idle mode\" as Idle <<Warning>>\n  state \"Configuring mode\" as Configuring\n  [*] --> Idle\n  Idle --> Configuring : EvConfig\n  Configuring --> Idle : EvConfig\n}\n\nNotShooting --> [*]\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/state-diagram"
+  },
+  {
+    "prompt": "Ãtat syntaxe de diagramme et caractÃ©ristiques",
+    "code": "@startuml\nskinparam State {\n  AttributeFontColor blue\n  AttributeFontName serif\n  AttributeFontSize  9\n  AttributeFontStyle italic\n  BackgroundColor palegreen\n  BorderColor violet\n  EndColor gold\n  FontColor red\n  FontName Sanserif\n  FontSize 15\n  FontStyle bold\n  StartColor silver\n}\n\nstate A : a a a\\na\nstate B : b b b\\nb\n\n[*] -> A  : start\nA -> B : a2b\nB -> [*] : end\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/state-diagram"
+  },
+  {
+    "prompt": "Ãtat syntaxe de diagramme et caractÃ©ristiques",
+    "code": "@startuml\n\n<style>\nstateDiagram {\n  BackgroundColor Peru\n  'LineColor Gray\n  FontName Impact\n  FontColor Red\n  arrow {\n    FontSize 13\n    LineColor Blue\n  }\n}\n</style>\n\n\n[*] --> NotShooting\n\nstate \"Not Shooting State\" as NotShooting {\n  state \"Idle mode\" as Idle <<Warning>>\n  state \"Configuring mode\" as Configuring\n  [*] --> Idle\n  Idle --> Configuring : EvConfig\n  Configuring --> Idle : EvConfig\n}\n\nNotShooting --> [*]\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/state-diagram"
+  },
+  {
+    "prompt": "Ãtat syntaxe de diagramme et caractÃ©ristiques",
+    "code": "@startuml\nstate FooGradient #red-green ##00FFFF\nstate FooDashed #red|green ##[dashed]blue {\n}\nstate FooDotted ##[dotted]blue {\n}\nstate FooBold ##[bold] {\n}\nstate Foo1 ##[dotted]green {\nstate inner1 ##[dotted]yellow\n}\n\nstate out ##[dotted]gold\n\nstate Foo2 ##[bold]green {\nstate inner2 ##[dotted]yellow\n}\ninner1 -> inner2\nout -> inner2\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/state-diagram"
+  },
+  {
+    "prompt": "Ãtat syntaxe de diagramme et caractÃ©ristiques",
+    "code": "@startuml\n@startuml\nstate FooGradient #red-green;line:00FFFF\nstate FooDashed #red|green;line.dashed;line:blue {\n}\nstate FooDotted #line.dotted;line:blue {\n}\nstate FooBold #line.bold {\n}\nstate Foo1 #line.dotted;line:green {\nstate inner1 #line.dotted;line:yellow\n}\n\nstate out #line.dotted;line:gold\n\nstate Foo2 #line.bold;line:green {\nstate inner2 #line.dotted;line:yellow\n}\ninner1 -> inner2\nout -> inner2\n@enduml\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/state-diagram"
+  },
+  {
+    "prompt": "Ãtat syntaxe de diagramme et caractÃ©ristiques",
+    "code": "@startuml\nstate s1 : s1 description\nstate s2 #pink;line:red;line.bold;text:red : s2 description\nstate s3 #palegreen;line:green;line.dashed;text:green : s3 description\nstate s4 #aliceblue;line:blue;line.dotted;text:blue   : s4 description\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/state-diagram"
+  },
+  {
+    "prompt": "Ãtat syntaxe de diagramme et caractÃ©ristiques",
+    "code": "@startuml\nstate alias1 \nstate \"alias2\"\nstate \"long name\" as alias3\nstate alias4 as \"long name\"\n\nalias1 : \"\"state alias1\"\"\nalias2 : \"\"state \"alias2\"\"\"\nalias3 : \"\"state \"long name\" as alias3\"\"\nalias4 : \"\"state alias4 as \"long name\"\"\"\n\nalias1 -> alias2\nalias2 -> alias3\nalias3 -> alias4\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/state-diagram"
+  },
+  {
+    "prompt": "Ãtat syntaxe de diagramme et caractÃ©ristiques",
+    "code": "@startuml\nstate alias1 : \"\"state alias1\"\"\nstate \"alias2\" : \"\"state \"alias2\"\"\"\nstate \"long name\" as alias3 : \"\"state \"long name\" as alias3\"\"\nstate alias4 as \"long name\" : \"\"state alias4 as \"long name\"\"\"\n\nalias1 -> alias2\nalias2 -> alias3\nalias3 -> alias4\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/state-diagram"
+  },
+  {
+    "prompt": "Ãtat syntaxe de diagramme et caractÃ©ristiques",
+    "code": "@startuml\nstate \"A\" as stateA\nstate \"C\" as stateC {\n state B\n}\n\njson jsonJ {\n   \"fruit\":\"Apple\",\n   \"size\":\"Large\",\n   \"color\": [\"Red\", \"Green\"]\n}\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/state-diagram"
+  },
+  {
+    "prompt": "Ãtat syntaxe de diagramme et caractÃ©ristiques",
+    "code": "@startuml\nhide empty description \n\nstate s0\n\nstate \"This is the State 1\" as s1 {\n  s1: State description\n  state s2\n  state s3: long descr.\n  state s4\n  s4: long descr.\n}\n\n[*] -> s0\ns0 --> s2\n\ns2 -> s3\ns3 -> s4\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/state-diagram"
+  },
+  {
+    "prompt": "Ãtat syntaxe de diagramme et caractÃ©ristiques",
+    "code": "@startuml\n<style>\n.foo {\n  state,stateBody {\n    BackGroundColor lightblue;\n  }\n}\n</style>\n\nstate MainState <<foo>> {\n  state SubA\n}\n@enduml",
+    "langage": "plantuml",
+    "source": "https://plantuml.com/fr/state-diagram"
+  }
+]
