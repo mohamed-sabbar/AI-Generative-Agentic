@@ -21,8 +21,8 @@ for filename in os.listdir(DATA_DIR):
         documents.append(Document(page_content=code, metadata=metadata))
 
 
-embeddings = HuggingFaceEmbeddings()  # ou HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
 
+embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
 # 3️⃣ Créer la base FAISS et indexer
 vector_store = FAISS.from_documents(documents, embeddings)
 

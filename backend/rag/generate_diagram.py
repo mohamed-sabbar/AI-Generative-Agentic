@@ -1,19 +1,30 @@
-from langchain.chains import RetrievalQA
-from langchain_community.llms import HuggingFaceHub
 from langchain_community.vectorstores import FAISS
 from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_ollama import ChatOllama
+from langchain.chains import RetrievalQA
+from langchain.chains.question_answering import load_qa_chain
 
-INDEX_DIR = "storage/vector_index"
+# Embeddings
 embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
-vector_store = FAISS.load_local(INDEX_DIR, embeddings, allow_dangerous_deserialization=True)
 
-retriever = vector_store.as_retriever(search_type="similarity", search_kwargs={"k": 3})
-
-llm = HuggingFaceHub(
-    repo_id="tiiuae/falcon-7b-instruct",
-    model_kwargs={"temperature":0, "max_new_tokens":512}
+# Chargement de l'index FAISS
+vector_store = FAISS.load_local(
+    "storage/vector_index",
+    embeddings,
+    allow_dangerous_deserialization=True
 )
 
+
+# Récupérateur
+retriever = vector_store.as_retriever(search_type="similarity", search_kwargs={"k": 5})
+
+# LLM Ollama
+llm = ChatOllama(
+    model="llama3.1",       # Modèle Ollama installé localement
+    temperature=0
+)
+
+# Chaîne RAG
 rag_chain = RetrievalQA.from_chain_type(
     llm=llm,
     chain_type="stuff",
@@ -21,7 +32,8 @@ rag_chain = RetrievalQA.from_chain_type(
     return_source_documents=True
 )
 
-query = "Génère un diagramme de séquence pour le processus de login utilisateur"
-result = rag_chain({"query": query})
+# Question
+query = "Fais-moi un diagramme UML de class de gestion de stock avec plantuml"
+result = rag_chain.invoke({"query": query})
 
 print(result['result'])
