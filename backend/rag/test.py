@@ -5,7 +5,7 @@ llm = ChatOllama(
     model="llama3.1",
     temperature=0
 )
-prompt ="Fais-moi un diagramme UML de class de gestion de stock avec plantuml"
+prompt ="diagramme de classe SelectionManager avec plantuml"
 
     
 messages = [HumanMessage(content=prompt)]

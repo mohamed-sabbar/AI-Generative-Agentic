@@ -33,7 +33,7 @@ rag_chain = RetrievalQA.from_chain_type(
 )
 
 # Question
-query = "Fais-moi un diagramme UML de class de gestion de stock avec plantuml"
+query = "diagramme de classe SelectionManager avec plantuml"
 result = rag_chain.invoke({"query": query})
 
 print(result['result'])
