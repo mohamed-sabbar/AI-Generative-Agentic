@@ -1,66 +1,84 @@
 import os
-from langchain.vectorstores import FAISS
-from langchain.embeddings import HuggingFaceEmbeddings   
-from langchain.docstore.document import Document
-from dotenv import load_dotenv
 import json
-load_dotenv() 
+from dotenv import load_dotenv
+from langchain_community.vectorstores import FAISS
+from langchain_huggingface import HuggingFaceEmbeddings
+from langchain.docstore.document import Document
 
-DATA_DIR = "dataset/plantuml/dataset.json"  
-INDEX_DIR = "storage/vector_index"
+# Charger les variables d'environnement
+load_dotenv()
+
+# --- Configuration ---
+DATASET_PATHS = {
+    "uml": "dataset/UML/dataset_UML.json",
+    "c4": "dataset/C4/plantuml_c4_dataset.json",
+    "mindmap": "dataset/mindmap/mindmap_dataset.json"
+}
+INDEX_DIR = "storage"
+
+# --- Embeddings ---
+embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
 
 
-with open(DATA_DIR,"r",encoding='utf-8') as f:
-      data=json.load(f)
-documents = []
-for entry in data:
-    # Vérifie si "code" est un dict ou une string
-    code = entry.get("code", "")
-    if isinstance(code, dict):
-        # Prend le champ "content" si c'est un dict
-        content = code.get("content", "")
-    else:
-        content = str(code)  # assure une string
+def load_dataset(file_path: str):
+    """Charge un dataset JSON et retourne une liste d'entrées."""
+    with open(file_path, "r", encoding="utf-8") as f:
+        return json.load(f)
 
-    metadata = {
-        "prompt": entry.get("prompt", ""),
-        "langage": entry.get("langage", ""),
-        "type": entry.get("type", ""),
-        "tags": entry.get("tags", []),
-        "description": entry.get("description", ""),
-        "source": entry.get("source", "")
-    }
 
-    documents.append(Document(page_content=content, metadata=metadata))
+def safe_to_str(value):
+    """Transforme n'importe quelle valeur en string propre."""
+    if value is None:
+        return ""
+    if isinstance(value, (list, dict)):
+        return json.dumps(value, ensure_ascii=False)
+    return str(value)
 
-print(f"Nombre de documents chargés : {len(documents)}")
-print(documents[19])
-print(len(data))
-embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
 
-# --- Créer l'index FAISS ---
-vector_store = FAISS.from_documents(documents, embeddings)
+def build_documents(data):
+    """Transforme les données JSON en documents LangChain."""
+    documents = []
+    for entry in data:
+        # Contenu principal
+        code = entry.get("code", "")
+        content = safe_to_str(code)
 
-# --- Sauvegarder l'index localement ---
-if not os.path.exists(INDEX_DIR):
-    os.makedirs(INDEX_DIR)
-vector_store.save_local(INDEX_DIR)
-print("Indexation terminée !")
+        metadata = {
+            "prompt": safe_to_str(entry.get("prompt", "")),
+            "langage": safe_to_str(entry.get("langage", "")),
+            "type": safe_to_str(entry.get("type", "")),
+            "tags": safe_to_str(entry.get("tags", [])),
+            "description": safe_to_str(entry.get("description", "")),
+            "source": safe_to_str(entry.get("source", "")),
+        }
 
-# --- Recharger l'index pour tester ---
-vector_store = FAISS.load_local(INDEX_DIR, embeddings, allow_dangerous_deserialization=True)
+        documents.append(Document(page_content=content, metadata=metadata))
+    return documents
 
-# --- Test d'une requête ---
-query = "diagramme de classe SelectionManager"
-results = vector_store.similarity_search(query, k=3)
 
-print("\nRésultats trouvés :")
-for i, r in enumerate(results):
-    print(f"\nResult {i+1}:")
-    print("Tags :", r.metadata.get("tags", "N/A"))
-    print("Source :", r.metadata.get("source", "N/A"))
-    print("Description :", r.metadata.get("description", "N/A"))
-    print("Extrait du code :", r.page_content[:300], "...\n")
+def index_dataset(dataset_name, dataset_path):
+    """Construit un index FAISS pour un dataset donné."""
+    print(f"\n📂 Indexation du dataset: {dataset_name}")
+    data = load_dataset(dataset_path)
+    documents = build_documents(data)
 
-# --- Vérifier le nombre total de documents indexés ---
-print("Total de documents dans l'index FAISS :", vector_store.index.ntotal)
+    # Construire l’index
+    vector_store = FAISS.from_documents(documents, embeddings)
+
+    # Sauvegarder
+    index_path = os.path.join(INDEX_DIR, f"index_{dataset_name}")
+    os.makedirs(INDEX_DIR, exist_ok=True)
+    vector_store.save_local(index_path)
+
+    print(f"✅ Index sauvegardé : {index_path} ({len(documents)} documents)")
+
+
+if __name__ == "__main__":
+    for name, path in DATASET_PATHS.items():
+        if os.path.exists(path):
+            try:
+                index_dataset(name, path)
+            except Exception as e:
+                print(f"❌ Erreur lors de l'indexation de {name} : {e}")
+        else:
+            print(f"⚠️ Dataset introuvable : {path}")
