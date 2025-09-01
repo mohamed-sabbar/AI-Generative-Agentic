@@ -5,7 +5,7 @@ llm = ChatOllama(
     model="llama3.1",
     temperature=0
 )
-prompt ="diagramme de classe SelectionManager avec plantuml"
+prompt ="diagramme C4 ecommerce avec plantuml"
 
     
 messages = [HumanMessage(content=prompt)]

@@ -3,20 +3,22 @@ from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_ollama import ChatOllama
 from langchain.chains import RetrievalQA
 from langchain.chains.question_answering import load_qa_chain
-
+import os
 # Embeddings
 embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
 
 # Chargement de l'index FAISS
-vector_store = FAISS.load_local(
-    "storage/vector_index",
+
+
+def load_vector(diagram_type:str):
+     index_path = os.path.join("storage", f"index_{diagram_type}")
+     return FAISS.load_local(
+    index_path,
     embeddings,
     allow_dangerous_deserialization=True
 )
-
-
 # Récupérateur
-retriever = vector_store.as_retriever(search_type="similarity", search_kwargs={"k": 5})
+retriever = load_vector("uml").as_retriever(search_type="similarity", search_kwargs={"k": 5})
 
 # LLM Ollama
 llm = ChatOllama(
@@ -33,7 +35,7 @@ rag_chain = RetrievalQA.from_chain_type(
 )
 
 # Question
-query = "diagramme de classe SelectionManager avec plantuml"
+query = "diagramme de usecase de gestion de stock avec plantuml"
 result = rag_chain.invoke({"query": query})
 
 print(result['result'])
