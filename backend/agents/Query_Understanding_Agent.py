@@ -61,6 +61,6 @@ def query_understading_agent(user_query: str) -> QueryStructure:
 # 5. Test
 # -------------------------
 if __name__ == "__main__":
-    query = "diagramme de classe SelectionManager avec plantuml"
+    query = "diagramme de classe d'une application qui liste les examens des cours avec plantuml"
     result = query_understading_agent(query)
     print(result.model_dump())

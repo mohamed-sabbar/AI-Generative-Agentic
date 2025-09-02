@@ -48,7 +48,7 @@ def retrieval_agent(query_structure) -> List[str]:
 if __name__ == "__main__":
     from Query_Understanding_Agent import query_understading_agent
 
-    user_query = "diagramme de classe SelectionManager avec PlantUML"
+    user_query = "diagramme de classe d'une application qui liste les examens des cours avec PlantUML"
     query_struct = query_understading_agent(user_query)
 
     results = retrieval_agent(query_struct)
