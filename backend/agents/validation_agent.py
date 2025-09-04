@@ -1,61 +1,42 @@
-# validation_agent.py
-
-import subprocess
-import tempfile
-import os
-
-# Chemin vers le plantuml.jar sur ton système Windows
-PLANTUML_JAR_PATH = r"C:\plantuml\plantuml.jar"
-
-def validate_plantuml(diagram_code: str) -> bool:
+import requests
+from Query_Understanding_Agent import query_understading_agent
+from Retrieval_Agent import retrieval_agent
+from Reranker_Agent import reranker_agent
+from Generation_Agent import generation_agent
+def validate_and_generate_diagram(diagram_code: str, diagram_type: str = "plantuml", output_file: str = "diagram.png", format: str = "png") -> bool:
     """
-    Valide un diagramme PlantUML en essayant de le rendre.
-    Retourne True si le code est correct, False sinon.
+    Valide un diagramme et génère l'image via l'API Kroki.
+    Retourne True si le rendu est correct, False sinon.
     """
-    tmp_file_path = None
+    url = f"https://kroki.io/{diagram_type}/{format}"
+    headers = {"Content-Type": "text/plain"}
+
     try:
-        # Crée un fichier temporaire .puml
-        with tempfile.NamedTemporaryFile(delete=False, suffix=".puml") as tmp_file:
-            tmp_file.write(diagram_code.encode("utf-8"))
-            tmp_file_path = tmp_file.name
-
-        # Appelle PlantUML via Java pour générer un PNG
-        subprocess.run(
-            ["java", "-jar", PLANTUML_JAR_PATH, "-tpng", tmp_file_path],
-            check=True,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE
-        )
-        return True
-    except subprocess.CalledProcessError as e:
-        print("Erreur PlantUML :", e.stderr.decode())
+        response = requests.post(url, data=diagram_code.encode("utf-8"), headers=headers)
+        if response.status_code == 200:
+            with open(output_file, "wb") as f:
+                f.write(response.content)
+            return True
+        else:
+            print("❌ Erreur Kroki :", response.status_code, response.text)
+            return False
+    except Exception as e:
+        print("❌ Exception :", e)
         return False
-    finally:
-        # Supprime le fichier temporaire
-        if tmp_file_path and os.path.exists(tmp_file_path):
-            os.remove(tmp_file_path)
+if __name__=="__main__":
+        # Requête utilisateur
+    user_query = "diagramme de classe d'une application qui liste les examens  de  avec PlantUML"
 
-
-# -------------------------
-# Exemple d'utilisation
-# -------------------------
-if __name__ == "__main__":
-    from Generation_Agent import generation_agent
-    from Query_Understanding_Agent import query_understading_agent
-    from Retrieval_Agent import retrieval_agent
-    from Reranker_Agent import reranker_agent
-
-    user_query = "diagramme de classe d'une application qui liste les examens des cours avec plantuml"
-
+    # Étape 1 : Compréhension de la requête
     query_struct = query_understading_agent(user_query)
+
+    # Étape 2 : Récupération de documents
     docs = retrieval_agent(query_struct)
+
+    # Étape 3 : Reranking
     best_doc = reranker_agent(user_query, docs)
+
+    # Étape 4 : Génération du diagramme final
     diagram_code = generation_agent(user_query, best_doc)
-
-    print("Code généré :\n", diagram_code)
-
-    is_valid = validate_plantuml(diagram_code)
-    if is_valid:
-        print("✅ Le diagramme est valide !")
-    else:
-        print("❌ Le diagramme contient des erreurs.")
+    is_valid=validate_and_generate_diagram(diagram_code=diagram_code)
+    print(is_valid)
